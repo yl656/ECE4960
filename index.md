@@ -6,14 +6,14 @@ Andrew Lin, M. Eng in ECE, and a proud member of the Collective Embodied Intelli
 
 # Labs
 
-## Lab1, The Artemis Board and Virtual Machine
-## Lab2, Bluetooth Communication
-## Lab3, Characterize The Car
-## Lab4, The Artemis board and Virtual Machine
-## Lab5, The Artemis board and Virtual Machine
-## Lab6, The Artemis board and Virtual Machine
-## Lab7, The Artemis board and Virtual Machine
-## Lab8, The Artemis board and Virtual Machine
-## Lab9, The Artemis board and Virtual Machine
-## Lab10, The Artemis board and Virtual Machine
-## Lab11, The Artemis board and Virtual Machine
+[Lab 1, The Artemis Board and Virtual Machine]()
+[Lab 2, Bluetooth Communication]()
+[Lab 3, Characterize The Car]()
+[Lab 4, Open Loop Control]()
+[Lab 5, Obstacle Avoidance]()
+[Lab 6, IMU]()
+[Lab 7, Odometry]()
+[Lab 8, Mapping]()
+[Lab 9, Planning]()
+[Lab 10, PID Control]()
+[Lab 11, Inverted Pendulum]()
