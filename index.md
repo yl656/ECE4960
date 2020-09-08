@@ -1,8 +1,11 @@
 ---
 title: ECE 4960
-description: [Fast Robots, Fall 2020](https://cei-lab.github.io/ECE4960/)
+description: Fast Robots, Fall 2020
 layout: default
 ---
+
+## Course Website
+[https://cei-lab.github.io/ECE4960/](https://cei-lab.github.io/ECE4960/)
 
 ## Labs
 
