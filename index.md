@@ -6,24 +6,24 @@ Andrew Lin, M. Eng in ECE, and a proud member of the Collective Embodied Intelli
 
 # Labs
 
-[Lab 1, The Artemis Board and Virtual Machine]()
+[Lab 1, The Artemis Board and Virtual Machine](Labs/Lab1.md)
 
-[Lab 2, Bluetooth Communication]()
+[Lab 2, Bluetooth Communication](Labs/Lab2.md)
 
-[Lab 3, Characterize The Car]()
+[Lab 3, Characterize The Car](Labs/Lab3.md)
 
-[Lab 4, Open Loop Control]()
+[Lab 4, Open Loop Control](Labs/Lab4.md)
 
-[Lab 5, Obstacle Avoidance]()
+[Lab 5, Obstacle Avoidance](Labs/Lab5.md)
 
-[Lab 6, IMU]()
+[Lab 6, IMU](Labs/Lab6.md)
 
-[Lab 7, Odometry]()
+[Lab 7, Odometry](Labs/Lab7.md)
 
-[Lab 8, Mapping]()
+[Lab 8, Mapping](Labs/Lab8.md)
 
-[Lab 9, Planning]()
+[Lab 9, Planning](Labs/Lab9.md)
 
-[Lab 10, PID Control]()
+[Lab 10, PID Control](Labs/Lab10.md)
 
-[Lab 11, Inverted Pendulum]()
+[Lab 11, Inverted Pendulum](Labs/Lab11.md)
