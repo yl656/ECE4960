@@ -1,1 +1,5 @@
-# Lab 2, Bluetooth Communication
+---
+title: Lab 2
+description: Bluetooth Communication
+layout: default
+---

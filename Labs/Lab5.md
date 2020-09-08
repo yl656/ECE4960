@@ -1,1 +1,5 @@
-# Lab 5, Obstacle Avoidance
+---
+title: Lab 5
+description: Obstacle Avoidance
+layout: default
+---

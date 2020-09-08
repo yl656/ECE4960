@@ -1,1 +1,5 @@
-# Lab 10, PID Control
+---
+title: Lab 10
+description: PID Control
+layout: default
+---

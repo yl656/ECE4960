@@ -1,1 +1,5 @@
-# Lab 3, Characterize The Car
+---
+title: Lab 3
+description: Characterize The Car
+layout: default
+---

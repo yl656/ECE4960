@@ -1,1 +1,5 @@
-# Lab 8, Mapping
+---
+title: Lab 8
+description: Mapping
+layout: default
+---

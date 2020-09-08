@@ -1,1 +1,5 @@
-# Lab 6, IMU
+---
+title: Lab 6
+description: IMU
+layout: default
+---
