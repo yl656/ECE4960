@@ -1,5 +1,5 @@
 ---
-title: Lab 9
-description: Planning
+title: Planning
+description: Lab 9
 layout: default
 ---

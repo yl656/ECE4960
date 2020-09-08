@@ -1,5 +1,5 @@
 ---
-title: Lab 8
-description: Mapping
+title: Mapping
+description: Lab 8
 layout: default
 ---

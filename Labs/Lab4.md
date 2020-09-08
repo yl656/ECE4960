@@ -1,5 +1,5 @@
 ---
-title: Lab 4
-description: Open Loop Control
+title: Open Loop Control
+description: Lab 4
 layout: default
 ---

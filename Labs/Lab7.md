@@ -1,5 +1,5 @@
 ---
-title: Lab 7
-description: Odometry
+title: Odometry
+description: Lab 7
 layout: default
 ---

@@ -1,5 +1,5 @@
 ---
-title: Lab 5
-description: Obstacle Avoidance
+title: Obstacle Avoidance
+description: Lab 5
 layout: default
 ---

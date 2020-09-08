@@ -1,5 +1,5 @@
 ---
-title: Lab 11
-description: Inverted Pendulum
+title: Inverted Pendulum
+description: Lab 11
 layout: default
 ---
