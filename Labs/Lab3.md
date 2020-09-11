@@ -1,7 +1,5 @@
 ---
 title: Characterize The Car
-description: Lab 3
+description: <a href="https://cei-lab.github.io/ECE4960/Lab3.html">Lab 3</a>
 layout: default
 ---
-
-[Reference](https://cei-lab.github.io/ECE4960/Lab3.html)
