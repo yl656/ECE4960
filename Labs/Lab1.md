@@ -1,6 +1,6 @@
 ---
 title: The Artemis Board and Virtual Machine
-description: Lab 1
+description: Lab 1 <a href="https://cei-lab.github.io/ECE4960/Lab1.html">Lab 1</a>
 layout: default
 ---
 
