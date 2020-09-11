@@ -1,7 +1,5 @@
 ---
 title: Mapping
-description: Lab 8
+description: <a href="https://cei-lab.github.io/ECE4960/Lab8.html">Lab 8</a>
 layout: default
 ---
-
-[Reference](https://cei-lab.github.io/ECE4960/Lab8.html)
