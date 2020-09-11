@@ -1,7 +1,5 @@
 ---
 title: PID Control
-description: Lab 10
+description: <a href="https://cei-lab.github.io/ECE4960/Lab10.html">Lab 10</a>
 layout: default
 ---
-
-[Reference](https://cei-lab.github.io/ECE4960/Lab10.html)
