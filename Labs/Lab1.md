@@ -1,10 +1,8 @@
 ---
 title: The Artemis Board and Virtual Machine
-description: Lab 1 <a href="https://cei-lab.github.io/ECE4960/Lab1.html">Lab 1</a>
+description: <a href="https://cei-lab.github.io/ECE4960/Lab1.html">Lab 1</a>
 layout: default
 ---
-
-[Ref](https://cei-lab.github.io/ECE4960/Lab1.html)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TRdj1EKi1-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
