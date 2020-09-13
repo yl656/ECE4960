@@ -5,7 +5,7 @@ layout: default
 ---
 ## 1 and 2. Environment
 
-I updated my local installation of the Arduino IDE and installed the spcified version (1.1.2) of the Sparkfun Apollo3 board support pack. I then connected the Artemis Nano and my laptop, selected the correct port, and uploaded an example script successfully. 
+I updated my local installation of the Arduino IDE and installed the spcified version (1.1.2) of the Sparkfun Apollo3 board support pack. I then connected the Artemis Nano and my laptop, selected the correct port, lowered the baud rate as suggested, and uploaded an example script successfully. 
 
 ## 3. Blink
 
