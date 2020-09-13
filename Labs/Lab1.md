@@ -15,7 +15,7 @@ After uploading ```Example1_Blink``` to the board, the script toggles the on-boa
 
 ## 4. Serial
 
-Another example script I tested out was ```Example2_Serial```. The script sets up the Serial port with baud rate 9600 and prints out a menu, asking the user how many cheeses would be activated, and prints out a response indicating how many cheeses are dispensed after the user enters a number or the program times out. In the following video, I successfully saw the output ```Thank you. 9 cheeses dispensed.``` before I exited the program.
+Another example script I tested out was ```Example2_Serial```. The script sets up the Serial port with baud rate 9600 and prints out a menu, asking the user how many cheeses would be activated, and prints out a response indicating how many cheeses are dispensed after the user enters a number or the program times out. In the following video, I successfully got the output ```Thank you. 9 cheeses dispensed.``` before I exited the program.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BkgQW1qrjVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
