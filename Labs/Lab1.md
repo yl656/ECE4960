@@ -9,7 +9,7 @@ I updated my local installation of the Arduino IDE and installed the spcified ve
 
 ## 3. Blink
 
-After uploading ```Example1_Blink``` to the board, the script toggles the on-board LED by writing 0 and 1 to the pin defined constant ```LED_BUILTIN```  in a loop, and thus achieves the blinking effect. The result can be seen in the following video.
+After uploading ```Example1_Blink``` to the board, the script toggles the on-board LED by writing 0 and 1 to the pin that is a defined constant ```LED_BUILTIN```  in a loop, and thus achieves the blinking effect. The result can be seen in the following video.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TRdj1EKi1-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
