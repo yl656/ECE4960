@@ -45,6 +45,6 @@ Now, it writes 1 to to the LED pin if the loudest frequency is greater than 250 
 digitalWrite(LED_BUILTIN, ui32LoudestFrequency > 250);
 ```
 
-The following video shows that. Whenever I whistle, the LED turns on, and it turns off whenever I stop.
+The following video shows that. Whenever I whistle, the LED turns on, and it turns off whenever I stop. The board was also running on the bettery provided instaed of being directly plugged into my laptop.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7MwxSqB2zM0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
