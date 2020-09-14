@@ -4,11 +4,11 @@ description: <a href="https://cei-lab.github.io/ECE4960/Lab1.html" style="color:
 layout: default
 gif: lab1.gif
 ---
-# Purpose
+# Objective
 
 The purpose of this lab is to configure the proper environment for development and verify by compiling and uploading several example scripts to the Artemis Nano board.
 
-# Implementation
+# Tasks
 
 ### 1 and 2. Environment
 
