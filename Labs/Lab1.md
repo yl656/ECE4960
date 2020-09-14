@@ -6,6 +6,8 @@ gif: lab1.gif
 ---
 # Purpose
 
+The purpose of this lab is to configure the proper environment for development and verify it by running several example scripts.
+
 # Implementation
 
 ### 1 and 2. Environment
