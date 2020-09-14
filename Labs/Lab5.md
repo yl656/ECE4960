@@ -4,3 +4,5 @@ description: <a href="https://cei-lab.github.io/ECE4960/Lab5.html" style="color:
 layout: default
 gif: lab5.gif
 ---
+
+![](../assets/images/lab51.gif)
