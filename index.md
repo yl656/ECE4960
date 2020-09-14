@@ -11,7 +11,7 @@ gif: robot.gif
 
 [Lab 2, Bluetooth Communication](Labs/Lab2.md)
 
-[Lab 3, Characterize The Car](Labs/Lab3.md)
+[Lab 3, Characterize The Car](Labs/Lab3.md) 
 
 [Lab 4, Open Loop Control](Labs/Lab4.md)
 
