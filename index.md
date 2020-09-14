@@ -2,6 +2,7 @@
 title: ECE 4960
 description: <a href="https://cei-lab.github.io/ECE4960/" style="color:#FFCC00;">Fast Robots, Fall 2020</a>
 layout: default
+gif: robot.gif
 ---
 
 ## Labs
