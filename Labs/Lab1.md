@@ -2,7 +2,7 @@
 title: The Artemis Board
 description: <a href="https://cei-lab.github.io/ECE4960/Lab1.html" style="color:#FFCC00;">Lab 1</a>
 layout: default
-gif: lab1
+gif: lab1.gif
 ---
 
 
