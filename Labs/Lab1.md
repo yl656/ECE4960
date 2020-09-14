@@ -6,7 +6,7 @@ gif: lab1.gif
 ---
 # Purpose
 
-The purpose of this lab is to configure the proper environment for development and verify it by running several example scripts.
+The purpose of this lab is to configure the proper environment for development and verify by compiling and uploading several example scripts to the Artemis Nano board.
 
 # Implementation
 
