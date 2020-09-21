@@ -76,10 +76,10 @@ Since we are interested in knowing the theoretical limit as well as the average 
 
 First, the theoretical limit. 
 
-|       Packet Length      |   4  |   6  |  27  |  52  |  77  |  99  |
-|:------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|
-| Min Time on Artemis (μs) |  20  |  20  |  23  |  27  |  31  |  34  |
-| Min Time on Laptop (ms)  | 0.15 | 0.15 | 0.55 |  44  |  46  |  48  |
+| Packet Length 	| 4 	| 6 	| 27 	| 52 	| 77 	| 99 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| Min Time on Artemis (μs) 	| 20 	| 20 	| 23 	| 27 	| 31 	| 34 	|
+| Min Time on Laptop (ms) 	| 0.15 	| 0.15 	| 0.55 	| 44 	| 46 	| 48 	|
 
 <img align="center" src="/ECE4960/assets/images/lab2/c1.png">
 
@@ -89,10 +89,10 @@ We can again calculate the data rate just like we did for ping. For example, whe
 
 Then, for each entry we calculate the same thing.
 
-|   Packet Length  |      4      |    6    |     27      |     52      |     77      |     99      |
-|:----------------:|:------ ----:|:-------:|:-----------:|:-----------:|:------ ----:|:-----------:|
-| Artemis (bits/s) |   1600000   | 2400000 | 9391304.348 | 15407407.41 | 19870967.74 | 23294117.65 |
-| Laptop (bits/s)  | 213333.3333 |  320000 | 392727.2727 | 9454.545455 | 13391.30435 |    16500    |
+| Packet Length 	| 4 	| 6 	| 27 	| 52 	| 77 	| 99 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| Artemis (bits/s) 	| 1600000 	| 2400000 	| 9391304.348 	| 15407407.41 	| 19870967.74 	| 23294117.65 	|
+| Laptop (bits/s) 	| 213333.3333 	| 320000 	| 392727.2727 	| 9454.545455 	| 13391.30435 	| 16500 	|
 
 <img align="center" src="/ECE4960/assets/images/lab2/c2.png">
 
@@ -100,23 +100,18 @@ As we can see, on the Artemis board, the data rate increases almost linearly wit
 
 But we are also interested in the average data rate. Therefore, we graph with the following histograms and perform similar calculations on the average time between two packets.
 
-<img align="left" src="/ECE4960/assets/images/lab2/4.png"> <img align="right" src="/ECE4960/assets/images/lab2/6.png">
+<img align="left" src="/ECE4960/assets/images/lab2/4.png" width=400> <img align="right" src="/ECE4960/assets/images/lab2/6.png" width=400>
 
-![](/ECE4960/assets/images/lab2/4.png)
-![](/ECE4960/assets/images/lab2/6.png)
+<img align="left" src="/ECE4960/assets/images/lab2/27.png" width=400> <img align="right" src="/ECE4960/assets/images/lab2/52.png" width=400>
 
-![](/ECE4960/assets/images/lab2/27.png)
-![](/ECE4960/assets/images/lab2/52.png)
-
-![](/ECE4960/assets/images/lab2/77.png)
-![](/ECE4960/assets/images/lab2/99.png)
+<img align="left" src="/ECE4960/assets/images/lab2/77.png" width=400> <img align="right" src="/ECE4960/assets/images/lab2/99.png" width=400>
 
 The results are as follows:
 
-| Packet Length |      4      |      6      |     27     |     52     |     77      |      99     |
-|:-------------:|:-----------:|:-----------:|:----------:|:----------:|:-----------:|:-----------:|
-| Delay (ms)    |    30.8     |    29.5     |    55.3    |    53.6    |     103     |     99.6    |
-| Bit Rate      | 1038.961039 | 1627.118644 | 3905.96745 | 7761.19403 | 5980.582524 | 7951.807229 |
+| Packet Length 	| 4 	| 6 	| 27 	| 52 	| 77 	| 99 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| Delay (ms) 	| 30.8 	| 29.5 	| 55.3 	| 53.6 	| 103 	| 99.6 	|
+| Bit Rate 	| 1038.961039 	| 1627.118644 	| 3905.96745 	| 7761.19403 	| 5980.582524 	| 7951.807229 	|
 
 ![](/ECE4960/assets/images/lab2/c3.png)
 
