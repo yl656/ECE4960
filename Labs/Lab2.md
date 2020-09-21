@@ -106,7 +106,9 @@ But we are also interested in the average data rate. Therefore, we graph with th
 
 <img align="left" src="/ECE4960/assets/images/lab2/77.png" width=500> <img align="right" src="/ECE4960/assets/images/lab2/99.png" width=500>
   
-  
+<br>
+<br>
+<br>
 The results are as follows:
 
 | Packet Length 	| 4 	| 6 	| 27 	| 52 	| 77 	| 99 	|
@@ -116,6 +118,9 @@ The results are as follows:
 
 <img align="left" src="/ECE4960/assets/images/lab2/c3.png" width=500> <img align="right" src="/ECE4960/assets/images/lab2/c4.png" width=500>
   
-  
+<br>
+<br>
+<br>
+<br>
 Therefore, realistically, the data rate that we are facing is probably closer to 5000 bps, which is slower than a modem in the early 90s, operating at 9600 bps.
 
