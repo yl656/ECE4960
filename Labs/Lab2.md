@@ -18,11 +18,11 @@ To connect to the robot, I first tried running the given Python script natively 
 
 After successfully connecting to the robot, I tried my first command. By uncommenting ```await theRobot.ping()``` in ```myRobotTasks()```, I added a task that pings the board. Since ```pingLoop``` is set to ```true``` in ```settings.py```, the script craetes a new ping request whenever a response from a ping request is received. Therefore, we have a continuous measurement of the round trip time between my laptop and the Artemis Nano. 
 
-<img align="center" src="/ECE4960/assets/images/lab2/ping.png">
+<center><img src="/ECE4960/assets/images/lab2/ping.png"></center>
 
 As we can see from the video below, the RTT starts at about 20ms. After about 20s, however, it drops to approximately 11ms. This is reflected on the histogram as about half the samples were collected after the drop and the other half before. The average delay is therefore in the middle, about 15ms.
 
-<iframe align="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/w3euU2_b5PQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/w3euU2_b5PQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 Each round trip consists of two packets, each with 99 bytes of data (1 byte for the command type, 1 byte for the data length, and 97 bytes of 0). Since the RTT drops to a steady 11ms, we will use that for our round-trip data rate calculation.
 
@@ -43,7 +43,7 @@ amdtpsSendData((uint8_t *)res_cmd, res_cmd->length + 2);
 
 The process can be seen in the following video. 
 
-<iframe align="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/SfYg54Johfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SfYg54Johfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 Obviously, the intention was to send 4.96 back to my laptop. However, the video clearly shows 4.960000038146973 being received. This is due to the limitation of the data type itself. Float has 24 bits of precision, which translates to about 7 decimal places. Indeed, there are five zeros after 4.96. This means that when comparing float values, we cannot simply use operators ```==``` and ```!=```.
 
@@ -69,7 +69,7 @@ if (code == Commands.BYTESTREAM_TX.value):
 
 One run can be seen from the video below.
 
-<iframe align="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/8bHaLU5Vi5k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8bHaLU5Vi5k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 Since we are interested in knowing the theoretical limit as well as the average bandwidth, I compare the minimal time as well as the average time. Timing on the Artemis board is very consistent, and therefore the minimal time can be viewed as the average time. The Python program, however, tells a different story.
 
@@ -81,7 +81,7 @@ First, the theoretical limit.
 | Min Time on Artemis (μs) 	| 20 	| 20 	| 23 	| 27 	| 31 	| 34 	|
 | Min Time on Laptop (ms) 	| 0.15 	| 0.15 	| 0.55 	| 44 	| 46 	| 48 	|
 
-<img align="center" src="/ECE4960/assets/images/lab2/c1.png">
+<center><img src="/ECE4960/assets/images/lab2/c1.png"></center>
 
 We can again calculate the data rate just like we did for ping. For example, when sending a command with 2 bytes of data, the Artemis board has the following data rate:
 
@@ -94,7 +94,7 @@ Then, for each entry we calculate the same thing.
 | Artemis (bits/s) 	| 1600000 	| 2400000 	| 9391304.348 	| 15407407.41 	| 19870967.74 	| 23294117.65 	|
 | Laptop (bits/s) 	| 213333.3333 	| 320000 	| 392727.2727 	| 9454.545455 	| 13391.30435 	| 16500 	|
 
-<img align="center" src="/ECE4960/assets/images/lab2/c2.png">
+<center><img src="/ECE4960/assets/images/lab2/c2.png"></center>
 
 As we can see, on the Artemis board, the data rate increases almost linearly with the packet size. This tells us that the actual transmission time is insignificant to the overhead. As packet size increases, the transmission time barely changes, therefore increasing the data rate. The bottom row is probably more realistic as it not only considers the time for data to transfer, but also be the time to process on both ends. It seems that the data rate follows a similar trend at the beginning, but then decays rapidly. This could be due to the increasing overhead in processing outweighting the benefit we gain from larger packet sizes.
 
