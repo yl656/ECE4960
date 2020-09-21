@@ -113,9 +113,7 @@ The results are as follows:
 | Delay (ms) 	| 30.8 	| 29.5 	| 55.3 	| 53.6 	| 103 	| 99.6 	|
 | Bit Rate 	| 1038.961039 	| 1627.118644 	| 3905.96745 	| 7761.19403 	| 5980.582524 	| 7951.807229 	|
 
-![](/ECE4960/assets/images/lab2/c3.png)
-
-![](/ECE4960/assets/images/lab2/c4.png)
+<img align="left" src="/ECE4960/assets/images/lab2/c3.png" width=400> <img align="right" src="/ECE4960/assets/images/lab2/c4.png" width=400>
 
 Therefore, realistically, the data rate that we are facing is probably closer to 5000 bps, which is slower than a modem in the early 90s, operating at 9600 bps.
 
