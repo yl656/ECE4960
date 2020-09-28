@@ -44,6 +44,7 @@ To reduce error, I conducted two trails and gathered the following data. Unfortu
 <img src="/ECE4960/assets/images/lab3/speed2.png" width="300">
 <img src="/ECE4960/assets/images/lab3/speed3.png" width="300">
 
+<br clear="all" />
 <p style="color:white;">Placeholder because I can't figure out the stupid image alignment</p>
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
@@ -54,13 +55,14 @@ The velocity can therefore be calculated as follows:
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img align="right" src="/ECE4960/assets/images/lab3/speed7.png" width=500>
 
+<br clear="all" />
 <p style="color:white;">Placeholder because I can't figure out the stupid image alignment</p>
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
 
 The velocity again can be calculated:
 
-\\[ vmax=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{18.26\,s-17.29\,s}=288\,cm/s \\]
+\\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{18.26\,s-17.29\,s}=288\,cm/s \\]
 
 Therefore, the maximum speed is somewhere between 2-3 m/s on my carpet.
 
