@@ -17,9 +17,9 @@ The purpose of this lab is know our car a little better and to set up the virtua
 
 The very first step of charactering our car would be to take some simple measurements of the car and the battery, such as dimensions, mass, and how long it takes to charge as well as drain the battery. Using a tape measure, a scale, and a clock, the following measurements were taken.
 
-| Length 	| Width 	| Height 	| Weight (Car) 	| Weight (Battery) 	| Est. Max Charge Time 	| Est. Max Usage Time 	|
-|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 15.7cm 	| 13.8cm 	| 12.1cm 	| 454g 	| 50g 	| 240 min 	| 25 min 	|
+| Length 	| Width 	| Height 	| Wheel Radius 	| Weight (Car) 	| Weight (Battery) 	| Est. Max Charge Time 	| Est. Max Usage Time 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 15.7cm 	| 13.8cm 	| 12.1cm 	| 3.73cm 	| 454g 	| 50g 	| 240 min 	| 25 min 	|
 
 Nothing about the car is surprising, except the weight of the car, which is *exactly* 1 pound. The battery measurments are a little tricky. The first time I charged it, the LED stopped blinking in about 2 hours, so the battery pack probably still had leftover charge. I then ran a series of tests with the fully-charged battery. After 20 minutes, the car was a little slower compared to earlier, but it was still very much functional. With the (I assumed) almost fully-depleted battery, the charging time went up to about 3.5 hours, which is still lower than what the instruction manual suggests. Interestingly, the instruction manual has instructions in two languages, each sugessting a different charging time.
 
