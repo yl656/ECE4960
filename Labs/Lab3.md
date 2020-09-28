@@ -50,9 +50,10 @@ To reduce error, I conducted two trails and gathered the following data. Unfortu
 
 The velocity can therefore be calculated as follows:
 
-\\[ v{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
+\\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img align="right" src="/ECE4960/assets/images/lab3/speed7.png" width=500>
+
 
 <br clear="all">
 
@@ -116,17 +117,19 @@ I also measured the minimum as well as maximum linear and angular speed of the r
 
 To measure the maximum linear spead, I selected the long corridor on the right and simply had the robot travel from one end to another using keys ```i``` and ```,``` at different velocities. I first measured the time it takes when the robot has linear velocity of well over 10000. Then, I scaled it down until eventually there was a difference in the travel time. Since the distance is the same, and we know 3 of the 4 variables involved, we can easily calculate the maximum speed.
 
-| Speed 	| MAX_SPEED 	| 0.4903 	| 0.2345 	|
-| Time 	| 9.41s 	| 19.06s 	| 39.96s 	|
-| Distance 	| N/A 	| 9.3451 	| 9.3706 	|
-| Max Speed 	| N/A 	| 0.9931 	| 0.9958 	|
+| Speed 	| Time 	| Distance 	| Max Speed 	|
+|:-:	|:-:	|:-:	|:-:	|
+| MAX_SPEED 	| 9.41s 	| N/A 	| N/A 	|
+| 0.4904 	| 10.96s 	| 9.3451 	| 0.9931 	|
+| 0.2345 	| 39.96s 	| 9.3706 	| 0.9958 	|
 
 Therefore, it is reasonable to assume that the maximum speed is 1. The same method can be used to find the maximum angular velocity by measuring the time it takes to make 5 rotations (to reduce error).
 
-| Angular Velocity 	| MAX_VA 	| 1.43 	| 0.4027 	|
-| Time per Rotation 	| 4s 	| 4.4s 	| 15.63s 	|
-| Distance Traveled 	| N/A 	| 6.292 	| 6.294 	|
-| Max Angular Velocity 	| N/A 	| 1.573 	| 1.5735 	|
+| Angular Velocity 	| Time per Rotation 	| Distance Traveled 	| Max Angular Velocity 	|
+|:-:	|:-:	|:-:	|:-:	|
+| MAX_VA 	| 4s 	| N/A 	| N/A 	|
+| 1.43 	| 4.4s 	| 6.292 	| 1.573 	|
+| 0.4027 	| 15.63s 	| 6.294 	| 1.5735 	|
 
 We can therefore conclude that the maximum angular velocity is 1.57, or \\( \frac{\pi}{2} \\).
 
