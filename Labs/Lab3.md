@@ -40,13 +40,15 @@ With the distance and the times, we can now calculate the speed using the follow
 
 To reduce error, I conducted two trails and gathered the following data. Unfortunately, the car does not want to follow a starightline and hit the door behind the cardboard box when travelling in a curve. 
 
+<center>
 <img src="/ECE4960/assets/images/lab3/speed1.png" width="300">
 <img src="/ECE4960/assets/images/lab3/speed2.png" width="300">
 <img src="/ECE4960/assets/images/lab3/speed3.png" width="300">
+</center>
 
 <br clear="all" />
 
-<img align="left" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
+<img align="right" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
 
 <br clear="all" />
 
@@ -58,7 +60,7 @@ The velocity can therefore be calculated as follows:
 
 <br clear="all" />
 
-<img align="left" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
+<img align="right" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
 
 <br clear="all" />
 
