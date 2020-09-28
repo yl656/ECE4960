@@ -7,8 +7,8 @@ gif: lab3.gif
 
 <center><video controls width="800"> <source src="/ECE4960/assets/videos/simulation.mov"></video></center>
 
-<center><video width="800" autoplay="autoplay"> <source src="/ECE4960/assets/videos/turtle1.mov"></video></center>
+<center><video width="800" autoplay="autoplay"> <source src="/ECE4960/assets/videos/simulation.mov"></video></center>
 
 <video autoplay loop muted inline>
-  <source src="/ECE4960/assets/videos/turtle1.mov">
+  <source src="/ECE4960/assets/videos/simulation.mov">
 </video>
