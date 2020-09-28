@@ -47,9 +47,11 @@ To reduce error, I conducted two trails and gathered the following data. Unfortu
 </center>
 
 <br clear="all" />
+
 <center>
-<img align="center" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img src="/ECE4960/assets/images/lab3/speed5.png" width=500>
+	<img align="center" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="center" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
 </center>
+
 <br clear="all" />
 
 The velocity can therefore be calculated as follows:
@@ -57,14 +59,12 @@ The velocity can therefore be calculated as follows:
 \\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
 
 <center>
-<img align="center" src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img src="/ECE4960/assets/images/lab3/speed7.png" width=500>
+	<img src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img src="/ECE4960/assets/images/lab3/speed7.png" width=500>
 </center>
 
-<br clear="all" />
-
-<img align="right" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
-
-<br clear="all" />
+<center>
+	<img align="center" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="center" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
+</center>
 
 The velocity again can be calculated:
 
