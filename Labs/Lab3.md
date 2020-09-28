@@ -49,6 +49,8 @@ To reduce error, I conducted two trails and gathered the following data. Unfortu
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
 
+<br clear="all" />
+
 The velocity can therefore be calculated as follows:
 
 \\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
@@ -59,6 +61,8 @@ The velocity can therefore be calculated as follows:
 <p style="color:white;">Placeholder because I can't figure out the stupid image alignment</p>
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
+
+<br clear="all" />
 
 The velocity again can be calculated:
 
