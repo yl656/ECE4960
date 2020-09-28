@@ -5,6 +5,4 @@ layout: default
 gif: lab3.gif
 ---
 
-<video controls width="250">
-    <source src="/ECE4960/assets/videos/simulation.mov">
-</video>
+<center><video controls width="500"> <source src="/ECE4960/assets/videos/simulation.mov"> </video></center>
