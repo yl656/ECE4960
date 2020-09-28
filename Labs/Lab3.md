@@ -52,7 +52,7 @@ To reduce error, I conducted two trials and gathered the following data. Unfortu
 
 The velocity can therefore be calculated as follows:
 
-\\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
+\\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.39\,s-48.40\,s}=282.22\,cm/s \\]
 
 <img align = "left" src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab3/speed7.png" width=500>
 
@@ -64,9 +64,9 @@ The velocity can therefore be calculated as follows:
 
 The velocity again can be calculated:
 
-\\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{18.26\,s-17.29\,s}=288\,cm/s \\]
+\\[ v_{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{18.32\,s-17.29\,s}=271.26\,cm/s \\]
 
-Therefore, the maximum speed is approximately \\( 2.6\,m/s \\) on my carpet.
+Therefore, the maximum speed is approximately \\( 2.75\,m/s \\) on my carpet.
 
 The maximum acceleration and braking distance are a lot harder to measure. To best measure acceleration, the IMU used by lab 6 is probably ideal. The braking distance is impossible to measure because of the center of gravity of the car. When traveling at max speed, the car rolls extremely easily if deceleration is applied.
 
