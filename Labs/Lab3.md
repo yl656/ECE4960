@@ -40,20 +40,21 @@ With the distance and the times, we can now calculate the speed using the follow
 
 To reduce error, I conducted two trails and gathered the following data. Unfortunately, the car does not want to follow a starightline and hit the door behind the cardboard box when travelling in a curve. 
 
+<img src="/ECE4960/assets/images/lab3/speed1.png" width="300">
+<img src="/ECE4960/assets/images/lab3/speed2.png" width="300">
+<img src="/ECE4960/assets/images/lab3/speed3.png" width="300">
 
-<img src="/ECE4960/assets/images/lab3/speed1.png" width="333">
-<img src="/ECE4960/assets/images/lab3/speed2.png" width="333">
-<img src="/ECE4960/assets/images/lab3/speed3.png" width="333">
+<img align="left" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
 
-
-<img align="left" src="/ECE4960/assets/images/lab3/speed4.png" width=500> <img align="right" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
-
+The velocity can therefore be calculated as follows:
 
 \\[ vmax=\frac{d_est}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img align="right" src="/ECE4960/assets/images/lab3/speed7.png" width=500>
 
-<img align="left" src="/ECE4960/assets/images/lab3/speed8.png" width=500> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
+<img align="left" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="right" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
+
+The velocity again can be calculated:
 
 \\[ vmax=\frac{d_est}{t_1-t_2}=\frac{279.4cm}{18.26\,s-17.29\,s}=288\,cm/s \\]
 
@@ -65,7 +66,7 @@ The maximum acceleration and braking distance are a lot harder to measure. To be
 
 In the previous section, my carpet was briefly mentioned. It plays a much more important role in this part.
 
-<center><video autoplay loop muted inline width="500"><source src="/ECE4960/assets/videos/lab3/spin1.mov"></video></center>
+<center><video autoplay loop muted inline width="500"><source src="/ECE4960/assets/videos/lab3/spin1.mp4"></video></center>
 
 <center><video autoplay loop muted inline width="500"><source src="/ECE4960/assets/videos/lab3/spin2.mov"></video></center>
 
@@ -87,7 +88,7 @@ I call these two the Tumbler because, well, it tumbles.
 
 #### Manual Control
 
-To test manual control as well as the braking distance, I tried to run the car at max speed and stop in front of a wall. Due to the high center of gravity, however, it cannot be stopped in an old-fashion way. Here is one that involves rolling.
+To test manual control as well as the braking distance, I tried to run the car at max speed and stop in front of a wall. Due to the high center of gravity, however, it cannot be stopped in an old-fashion way. Here is one that involves rolling. (My kitchen floor is nasty I know :/)
 
 <center><video autoplay loop muted inline width="500"><source src="/ECE4960/assets/videos/lab3/spinstop1.mov"></video></center>
 
@@ -112,15 +113,13 @@ I also measured the minimum as well as maximum linear and angular speed of the r
 To measure the maximum linear spead, I selected the long corridor on the right and simply had the robot travel from one end to another using keys ```i``` and ```,``` at different velocities. I first measured the time it takes when the robot has linear velocity of well over 10000. Then, I scaled it down until eventually there was a difference in the travel time. Since the distance is the same, and we know 3 of the 4 variables involved, we can easily calculate the maximum speed.
 
 | Speed 	| MAX_SPEED 	| 0.4903 	| 0.2345 	|
-|:-:	|:-:	|:-:	|:-:	|
 | Time 	| 9.41s 	| 19.06s 	| 39.96s 	|
 | Distance 	| N/A 	| 9.3451 	| 9.3706 	|
 | Max Speed 	| N/A 	| 0.9931 	| 0.9958 	|
 
-Therefore, it is reasonable to assume that the maximum speed it 1. The same method can be used to find the maximum angular velocity by measuring the time it takes to make 5 rotations (to reduce error).
+Therefore, it is reasonable to assume that the maximum speed is 1. The same method can be used to find the maximum angular velocity by measuring the time it takes to make 5 rotations (to reduce error).
 
 | Angular Velocity 	| MAX_VA 	| 1.43 	| 0.4027 	|
-|:-:	|:-:	|:-:	|:-:	|
 | Time per Rotation 	| 4s 	| 4.4s 	| 15.63s 	|
 | Distance Traveled 	| N/A 	| 6.292 	| 6.294 	|
 | Max Angular Velocity 	| N/A 	| 1.573 	| 1.5735 	|
