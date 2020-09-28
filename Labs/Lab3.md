@@ -36,7 +36,7 @@ First, the maximum speed that our car goes. The way I measure this is by setting
 
 With the distance and the times, we can now calculate the speed using the following equation.
 
-\\[ v_max=\frac{d}{t_end-t_begin}\\]
+\\[ v_{max}=\frac{d}{t_{end}-t_{begin}}\\]
 
 To reduce error, I conducted two trails and gathered the following data. Unfortunately, the car does not want to follow a starightline and hit the door behind the cardboard box when travelling in a curve. 
 
@@ -48,7 +48,7 @@ To reduce error, I conducted two trails and gathered the following data. Unfortu
 
 The velocity can therefore be calculated as follows:
 
-\\[ vmax=\frac{d_est}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
+\\[ v{max}=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{49.56\,s-48.40\,s}=240\,cm/s \\]
 
 <img align="left" src="/ECE4960/assets/images/lab3/speed6.png" width=500> <img align="right" src="/ECE4960/assets/images/lab3/speed7.png" width=500>
 
@@ -56,7 +56,7 @@ The velocity can therefore be calculated as follows:
 
 The velocity again can be calculated:
 
-\\[ vmax=\frac{d_est}{t_1-t_2}=\frac{279.4cm}{18.26\,s-17.29\,s}=288\,cm/s \\]
+\\[ vmax=\frac{d_{est}}{t_1-t_2}=\frac{279.4cm}{18.26\,s-17.29\,s}=288\,cm/s \\]
 
 Therefore, the maximum speed is somewhere between 2-3 m/s on my carpet.
 
