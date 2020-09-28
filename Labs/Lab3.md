@@ -47,7 +47,7 @@ To reduce error, I conducted two trials and gathered the following data. Unfortu
 </center>
 
 <center>
-	<img align="center" src="/ECE4960/assets/images/lab3/speed4.png" width=200> <img align="center" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
+	<img align="center" src="/ECE4960/assets/images/lab3/speed4.png" width=140> <img align="center" src="/ECE4960/assets/images/lab3/speed5.png" width=500>
 </center>
 
 The velocity can therefore be calculated as follows:
@@ -59,7 +59,7 @@ The velocity can therefore be calculated as follows:
 <br clear="all" />
 
 <center>
-	<img align="center" src="/ECE4960/assets/images/lab3/speed8.png" width=200> <img align="center" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
+	<img align="center" src="/ECE4960/assets/images/lab3/speed8.png" width=140> <img align="center" src="/ECE4960/assets/images/lab3/speed9.png" width=500>
 </center>
 
 The velocity again can be calculated:
