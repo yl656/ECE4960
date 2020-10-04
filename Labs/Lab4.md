@@ -1,7 +1,7 @@
 ---
 title: Open Loop Control
 description: <a href="https://cei-lab.github.io/ECE4960/Lab4.html" style="color:#FFCC00;">Lab 4</a>
-layout: home
+layout: default
 gif: lab4.gif
 ---
 
@@ -20,4 +20,4 @@ For this part of the lab, we run the setup script from the lab 4 base code and s
 
 <center><video autoplay loop muted inline width="800"><source src="/ECE4960/assets/videos/lab4/simulation.mp4"></video></center>
 
-The code that controls the motion of the robot is shown on the right. From [lab 3](../lab3.md), we know that the maximum angular velocity that the robot can handle is \\( \frac{\pi}{2}\,rad/s\\), which is why setting the angular velocity to 2 effectively makes it rotate \\( 90^{\circ}\\) every second. It therefore unrealistically follows a perfect square.
+The code that controls the motion of the robot is shown on the right. From [lab 3](../lab3.md), we know that the maximum angular velocity that the robot can handle is \\( \frac{\pi}{2}\,rad/s \\), which is why setting the angular velocity to 2 effectively makes it rotate \\( 90^{\circ} \\) every second. It therefore unrealistically follows a perfect square.
