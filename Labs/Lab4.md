@@ -33,34 +33,32 @@ With everything connected, I first started by running the ```wire``` example, wh
 nDevices = 0;
 for (address = 1; address < 127; address++)
 {
-// The i2c_scanner uses the return value of
-// the Write.endTransmisstion to see if
-// a device did acknowledge to the address.
-Wire.beginTransmission(address);
-error = Wire.endTransmission();
+	// The i2c_scanner uses the return value of
+	// the Write.endTransmisstion to see if
+	// a device did acknowledge to the address.
+	Wire.beginTransmission(address);
+	error = Wire.endTransmission();
 
-if (error == 0)
-{
-  Serial.print("I2C device found at address 0x");
-  if (address < 16)
-    Serial.print("0");
-  Serial.print(address, HEX);
-  Serial.println("  !");
+	if (error == 0)
+	{
+	  Serial.print("I2C device found at address 0x");
+	  if (address < 16)
+	    Serial.print("0");
+	  Serial.print(address, HEX);
+	  Serial.println("  !");
 
-  nDevices++;
+	  nDevices++;
+	}
+	else if (error == 4)
+	{
+	  Serial.print("Unknown error at address 0x");
+	  if (address < 16)
+	    Serial.print("0");
+	  Serial.println(address, HEX);
+	}
 }
-else if (error == 4)
-{
-  Serial.print("Unknown error at address 0x");
-  if (address < 16)
-    Serial.print("0");
-  Serial.println(address, HEX);
-}
-}
-if (nDevices == 0)
-Serial.println("No I2C devices found\n");
-else
-Serial.println("done\n");
+if (nDevices == 0) Serial.println("No I2C devices found\n");
+else Serial.println("done\n");
 ```
 
 By running this, I found out that the motor driver occupys the address ```0x5D```, which matches the default configuration given by its documentation.
@@ -77,25 +75,25 @@ myMotorDriver.setDrive( RIGHT_MOTOR, 0, 255);
 
 I tested different values to find out what the minimum value that can move the wheels without load is. First, I set both motor to a level of 65 and alternate the direction. The turns are very inconsistent as we can see.
 
-<center><video inline width="800"><source src="/ECE4960/assets/videos/lab4/65.mov"></video></center>
+<center><video controls="" width="800"><source src="/ECE4960/assets/videos/lab4/65.mov" type="video/mp4"></video></center>
 
 70 was then tested. It performed a little better, only missing a few turns, but it's still not what we want.
 
-<center><video inline width="800"><source src="/ECE4960/assets/videos/lab4/70.mov"></video></center>
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/70.mov" type="video/mp4"></video></center>
 
 Finally, when the value is set at 75, both wheels turn consistenly without glitches.
 
-<center><video inline width="800"><source src="/ECE4960/assets/videos/lab4/70.mov"></video></center>
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/70.mov" type="video/mp4"></video></center>
 
 However, this experiment is under ideal conditions without any load. When I put it down on the floor, I found out that I need to set the level to 100+ depending on the surface for it to run consistenly.
 
 Another problem with these cheap motors is that they have different accleration and top speed. In my case, the left motor accelerates better but the right motor has a higher top speed. Therefore, I conducted a few experiments hoping that I would find an ideal scaling factor that balances the two motors, but the best I can do is still underwhelming.
 
-<center><video inline width="400"><source src="/ECE4960/assets/videos/lab4/line.mov"></video></center>
+<center><video controls width="400" src="/ECE4960/assets/videos/lab4/line.mov"></video></center>
 
 ### Open Loop Control
 
-<center><video inline width="800"><source src="/ECE4960/assets/videos/lab4/control.mp4"></video></center>
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/control.mp4"></video></center>
 
 ## B. Virtual Robot
 
