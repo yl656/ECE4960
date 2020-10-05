@@ -15,7 +15,7 @@ The purpose of this lab is to take our robot apart and install the motor driver 
 
 ### Wiring
 
-After removing the control PCB and cutting off all the wires, I had to strip the wires using a wire cutter since I don't have a wire stripper. This turned out to be pretty difficult, especially since the wires are stranded and easy to cut through. Following the [hookup guide](https://learn.sparkfun.com/tutorials/hookup-guide-for-the-qwiic-motor-driver) for the motor driver, I then connected all wires to the motor driver, including \\( V_{in} \\) and \\( G\!N\!D \\) from the battery and the four terminals for the two motors. The inside of the car looks like this after all wiring.
+After removing the control PCB and cutting off all the wires, I had to strip the wires using a wire cutter since I don't have a wire stripper. This turned out to be pretty difficult, especially since the wires are stranded and easy to cut through. Following the [hookup guide](https://learn.sparkfun.com/tutorials/hookup-guide-for-the-qwiic-motor-driver) for the motor driver, I then connected all wires to the motor driver, including \\( V_{in} \\) and \\( G\! N\! D \\) from the battery and the four terminals for the two motors. The inside of the car looks like this after all wiring.
 
 <center><img src="/ECE4960/assets/images/lab4/inside.jpg" width="500"></center> 
 
