@@ -75,15 +75,15 @@ myMotorDriver.setDrive( RIGHT_MOTOR, 0, 255);
 
 I tested different values to find out what the minimum value that can move the wheels without load is. First, I set both motor to a level of 65 and alternate the direction. The turns are very inconsistent as we can see.
 
-<center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/65.mp4"></video></center>
+<center><video controls width="500"><source src="/ECE4960/assets/videos/lab4/65.mp4"></video></center>
 
 70 was then tested. It performed a little better, only missing a few turns, but it's still not what we want.
 
-<center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/70.mp4"></video></center>
+<center><video controls width="500"><source src="/ECE4960/assets/videos/lab4/70.mp4"></video></center>
 
 Finally, when the value is set at 75, both wheels turn consistenly without glitches.
 
-<center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/70.mp4"></video></center>
+<center><video controls width="500"><source src="/ECE4960/assets/videos/lab4/70.mp4"></video></center>
 
 However, this experiment is under ideal conditions without any load. When I put it down on the floor, I found out that I need to set the level to 100+ depending on the surface for it to run consistenly.
 
