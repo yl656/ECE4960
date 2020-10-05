@@ -93,7 +93,7 @@ Another problem with these cheap motors is that they have different accleration 
 
 ### Open Loop Control
 
-Just for fun, I integrated the motor control code with the FFT code from [lab 1](Lab1.html). Four different frequencies are used for four different motions: 300Hz -> straight forward, 400Hz -> spin counterclockwise, 500Hz -> spin clockwise and 600Hz -> straight backward. Each frequency has an error margin of ±20Hz, partly because the resolution of FFT is set at about 11Hz. I used a tone generator on my phone to control the car to move in my kitchen.
+Just for fun, I integrated the motor control code with the FFT code from [lab 1](Lab1.html). Four different frequencies are used for four different motions: 300Hz -> straight forward, 400Hz -> spin counterclockwise, 500Hz -> spin clockwise and 600Hz -> straight backward. Each frequency has an error margin of ±20Hz, partly because the resolution of FFT is set at about 11Hz. I used a tone generator on my phone to control the car to move around in my kitchen.
 
 <center><video controls width="800"><source src="/ECE4960/assets/videos/lab4/control.mp4"></video></center>
 
