@@ -19,7 +19,7 @@ After removing the control PCB and cutting off all the wires, I had to strip the
 
 <center><img src="/ECE4960/assets/images/lab4/inside.jpg" width="400"></center> 
 
-With everything connected, I reassembled the car with the motor driver inside. Unfortunately, I was not able to route the Qwiic connector through the hole as suggested. Instead, I loosely tightened the screws and allowed the connector to come out from the sides. The outside of the car looks like this after putting everything in place. 
+With everything connected, I reassembled the car with the motor driver inside. Unfortunately, I was not able to route the Qwiic connector through the hole as suggested. Instead, I loosely tightened the screws and allowed the connector to come out from the side. The outside of the car looks like this after putting everything in place. 
 
 <center><img src="/ECE4960/assets/images/lab4/outside.jpg" width="400"></center> 
 
