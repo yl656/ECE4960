@@ -27,7 +27,9 @@ Using the grid, I was able to conduct experiments mapping the actual distance of
 
 <br clear="all" />
 
-I tested different materials with different colors. Gray and white both refer to front and back of the piece of paper for calibration, while reflective is the rigid piece of paper from the bluetooth adapter that reflects visible lights better. As we can see, the proximity value depends on not only the distance but also the material. Its resolution also degrades rapidly for objects merely 5cm away. Therefore, this sensor might not be the best fit for our fast robot as range will be very important.
+I tested different materials with different colors. Gray and white both refer to front and back of the piece of paper for calibration, while reflective is the rigid piece of paper from the bluetooth adapter that reflects visible lights better. The time between two measurements is about 0.08s, but the proximity value fluctuates a lot before settling down the a final value, which takes about two seconds after the object has moved. Different lighting condition does not really affect the proximity value, bu the ambient light value and the white value are influenced significantly.
+
+As we can see, the proximity value depends on not only the distance but also the material. Its resolution also degrades rapidly for objects merely 5cm away. Therefore, this sensor might not be the best fit for our fast robot as range will be very important.
 
 ### Distance Sensor
 
@@ -37,9 +39,11 @@ Similarly, I tested the I2C address (0x29, as expected) and calibrated the VL53L
 
 The results are obtained with two surfaces, my bathroom door which is wood, and my kitchen wall. Obviously, the sensor produces higher values for both surfaces, but the results from different surfaces appear quite consistent. Therefore, we can simply apply a scaling factor to convert the sensor data to actual distance.
 
+I also tested the timing of different parts of the code. Namely, functions ```startRanging()```, ```getDistance()```, ```clearInterrupt()```, ```stopRanging```, and the time it takes for the sensor to return a valid distance after ```startRanging()```. ```startRanging()```, ```clearInterrupt()```, and ```stopRanging``` only takes \\( 455\mu s \\), while ```getDistance()``` takes \\( 455\mus \\). Presumably, this is because the first three functions only sends a command while the latter function has to request the data as well as reading it. The time it takes for the sensor to return a distance depends on the intermeasurement period, which would depend on the mode we choose. For long ranging mode, it takes about \\( 94055\mu s \\). For short ranging mode, it takes about \\( 28516\mu s \\). The two different modes result in different sampling frequencies, 10.6Hz and 35Hz. For avoiding obstacles, I believe that long ranging mode might be better. The robot only moves 20cm more when waiting for the long ranging data, but we get a much better range, and that also means we can plan ahead.
+
 ### Assembly & Integration
 
-For the "roomba", I don't believe that the proximity sensor will be of much use. The proximity sensor has a better resolution when the object is only a few centimeters away, but a few centimeters from where the sensors are mounted might not even reach the outer border of the robot. Besides, since our robot is going to be fast, a crash is bound to happen if we pick up something a few centimeters away. Therefore, only the distance sensor will be required.
+For the "roomba", I don't believe that the proximity sensor will be of much use. The proximity sensor has a better resolution when the object is only a few centimeters away, but a few centimeters from where the sensors are mounted might not even reach the outer border of the robot. Besides, since our robot is going to be fast, a crash is bound to happen if we pick up something a few centimeters away. The proximity value doesn't even update until 2 seconds after the change in distance. Therefore, only the distance sensor will be required.
 
 I plan to explore the quickest way to stop the robot completely. One way to stop it will be simply setting the velocity to 0. This is slow but safe. Another way is to put the motors in full reverse, which will definitely result in a flip. Therefore, I need to find a (presumably small) negative velocity that I could apply to the motors so that the motors could decelerate the robot as soon as possible without resulting in a flip, and then bring the velocity up to 0.
 
