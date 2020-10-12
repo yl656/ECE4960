@@ -11,14 +11,45 @@ The first and arguably the most essential part of feedback control is obstacle a
 
 ![](../assets/images/lab51.gif)
 
-Therefore, by adding two sensors, ...
-
+Therefore, by adding two sensors to our robot, the robot will be able to sense if anything is in front of it and actively avoid it, either stopping completely or turning away. We also conduct similar experiments in the simulator, but the virtual robot differs from the physical robot in two ways. In the simulator, there is no acceleration, and the robot is very rigid. 
 
 # Tasks
 
 ## A. Physical Robot
 
+### Proximity Sensor
+
+Following the instructions online, I installed the library, connected, and found the address of the VCNL4040 proximity sensor. It has an address of 0x60, which is its default hard-wired address, as stated in the datasheet.
+
+Using the grid, I was able to conduct experiments mapping the actual distance of objects to the "proximity value," as seen below, with the left one on linear scale and the right one on log scale.
+
+<img align = "left" src="/ECE4960/assets/images/lab5/prox_lin.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab5/prox_log.png" width=500>
+
+I tested different materials with different colors. Gray and white both refer to the piece of paper for calibration given to us, while reflective is the piece of hard paper from the bluetooth adapter that reflects visible lights better. As we can see, the proximity value depends on not only the distance but also the material. Its resolution also degrades rapidly for objects merely 10cm away. Therefore, this sensor might not be the best fit for our fast robot.
+
+### Distance Sensor
+
+Similarly, I tested the I2C address (0x29, as expected) and calibrated the sensor using the piece of 17% gray paper given to us. I then tested the acccuracy of the time-of-flight sensor by measuring distances that are already measured by a tape measure.
+
+<center><img src="/ECE4960/assets/images/lab5/tof.png" width="500"></center> 
+
+The results are obtained with two surfaces, my bathroom door which is wood, and my kitchen wall. Obviously, the sensor produces higher values for both sensors, but there the results from different surfaces appear quite consistent. Therefore, we can simply apply a scaling factor to convert the sensor data to actual distance.
+
+### Assembly & Integration
+
+For the "roomba", I don't believe that the proximity sensor will be of much use. The proximity sensor has a better resolution when the object is only a few centimeters away, but a few centimeters from where the sensors are mounted might not even reach the outer border of the robot. Besides, since our robot is going to be fast, a crash is bound to happen if we pick up something a few centimeters away. Therefore, only the distance sensor will be required.
+
+I plan to explore the quickest way to stop the robot completely. One way to stop it will be simply setting the velocity to 0. This is slow but safe. Another way is to put the motors in full reverse, which will definitely result in a flip. Therefore, I need to find a (presumably small) negative velocity that I could apply to the motors so that I could decelerate the robot as soon as possible, and then bring the velocity up to 0.
+
+Then, everything is simple. All we have to do is have the robot driving in full velocity, and when our time-of-flight distance sensors detect a distance that is slightly above our braking distance, we come to a full stop and spin to a different direction. Since route-planning is not in the scope of this lab, we can choose a random direction with no obstacle and repeat the process.
+
+Unfortunately, technical difficulties stopped that from happening. The qwiic part of my Artemis board seems to have stopped working completely as I am not able to detect any I2C devices that are connected at the moment. However, I plan to try using the other 2 I2C pins on the board after some soldering and see if that fixes the issue. This will be updated as soon as the problem is resolved.
+
 ## B. Virtual Robot
+
+At first, I didn't think that there was a duration for velocity commands, as they seem to go on forever. However, I accidently found out that they stop after a while without knowing when it stopped exactly. After staring at the virtual robot spin and falling asleep once or twice, I decided to record my screen and determine exactly how long the commands last. Turns out it's five minutes. That information, however, is not that useful unless we switch to a much bigger map that allows our robot to travel for five minutes before detecting anything in front of it.
+
+Since acceleration does not exist in the simulator, we can always travel at max speed, which is 1. Unfortunately we cannot go any higher because of the velocity limitations.
 
 In order for the virtual robot to detect obstacle, we need to make use of the ```get_laser_data()``` function, which returns the distance (maximum distance 6.0) from the "range finder" with noise. To understand the characteristics of the noise better, I collected 1000 data points on a stationary robot, each 0.1s apart, and plotted the distribution.
 
@@ -37,7 +68,7 @@ while True:
         hist = robot.get_laser_data()
 	    idx = idx + 1
 	    if idx == 50:
-        if abs(robot.get_laser_data()-hist)<0.5 and hist != 6.0:
+        if abs(robot.get_laser_data()-hist) < 0.5 and hist != 6.0:
           break
         else:
           idx = 0
@@ -68,4 +99,4 @@ With these different scenarios in mind, the robot wanders on the map endlessly, 
 
 <center><video controls width="800"><source src="/ECE4960/assets/videos/lab5/simulation.mp4"></video></center>
 
-We can actually see that the robot got stuck parallel to the wall at about 0:12 and at the corner at about 0:18. In both scenarios, the robot is able to free itself and return to normal.
+We can actually see that the robot got stuck at the corner at about 0:18, and that the robot is able to free itself and return to normal. However, that is still considered a collision. In order to avoid collision completely, the robot cannot travel in a straight line as the limited detection angle will not be able to see corners or walls in parallel. To fix it, we either need to add more sensors, or spin a little so we can cover a larger angle.
