@@ -30,7 +30,7 @@ As we can see from plot, the distribution is somewhat Gaussian with \\( \mu \app
 while True:
   idx = 0
   robot.set_vel(1,0)
-  hist=[0,0]
+  hist = 0
   while robot.get_laser_data() > 0.3:
 		time.sleep(0.02)
 	    if idx == 0:
