@@ -45,11 +45,18 @@ I also tested the timing of different parts of the code. Namely, functions ```st
 
 For the "roomba", I don't believe that the proximity sensor will be of much use. The proximity sensor has a better resolution when the object is only a few centimeters away, but a few centimeters from where the sensors are mounted might not even reach the outer border of the robot. Besides, since our robot is going to be fast, a crash is bound to happen if we pick up something a few centimeters away. The proximity value doesn't even update until 2 seconds after the change in distance. Therefore, only the distance sensor will be required.
 
-I plan to explore the quickest way to stop the robot completely. One way to stop it will be simply setting the velocity to 0. This is slow but safe. Another way is to put the motors in full reverse, which will definitely result in a flip. Therefore, I need to find a (presumably small) negative velocity that I could apply to the motors so that the motors could decelerate the robot as soon as possible without resulting in a flip, and then bring the velocity up to 0.
+I plan to explore the quickest way to stop the robot completely. One way to stop it will be simply setting the velocity to 0. This is slow but safe. Another way is to put the motors in full reverse, which will definitely result in a flip. Therefore, I need to find a (presumably small) negative velocity that I could apply to the motors so that the motors could decelerate the robot as soon as possible without resulting in a flip, and then bring the velocity up to 0. Since the next lab is about PID control, we can try to use PID then.
 
 Everything else is simple. All we have to do is have the robot driving in full velocity, and when our time-of-flight distance sensor detects a distance that is slightly above our braking distance, we come to a full stop and spin to a different direction. Since route-planning is not in the scope of this lab, we can choose a random direction with no obstacle and repeat the process.
 
-Unfortunately, technical difficulties stopped that from happening. The qwiic part of my Artemis board seems to have stopped working completely as I am not able to detect any I2C devices that are connected at the moment. However, I plan to try using the other 2 I2C pins on the board after some soldering and see if that fixes the issue. This will be updated as soon as the problem is resolved.
+I first tried to have the robot simply stop when an obstacle is detected. The battery was dying so the robot was driving super fast.
+
+<video autoplay loop muted inline width="500" align="left"><source src="/ECE4960/assets/videos/lab5/stop1.mp4"></video>
+<video autoplay loop muted inline width="500" align="right"><source src="/ECE4960/assets/videos/lab5/stop2.mp4"></video>
+
+Then, I modified the code so that the robot turns away instead of stopping. The final result is a robot that drives around aimlessly.
+
+<video autoplay loop muted inline width="700"><source src="/ECE4960/assets/videos/lab5/roomba.mp4"></video>
 
 ## B. Virtual Robot
 
