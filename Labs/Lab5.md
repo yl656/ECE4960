@@ -51,12 +51,13 @@ Everything else is simple. All we have to do is have the robot driving in full v
 
 I first tried to have the robot simply stop when an obstacle is detected. The battery was dying so the robot was driving relatively slow.
 
-<center><video autoplay loop muted inline width="300"><source src="/ECE4960/assets/videos/lab5/stop1.mp4"></video></center>
-<center><video autoplay loop muted inline width="300"><source src="/ECE4960/assets/videos/lab5/stop2.mp4"></video></center>
+<center><video controls width="300"><source src="/ECE4960/assets/videos/lab5/stop1.mp4"></video></center>
+
+<center><video controls width="300"><source src="/ECE4960/assets/videos/lab5/stop2.mp4"></video></center>
 
 Then, I modified the code so that the robot turns away instead of stopping. The final result is a robot that drives around aimlessly.
 
-<center><video autoplay loop muted inline width="700"><source src="/ECE4960/assets/videos/lab5/roomba.mp4"></video></center>
+<center><video controls width="700"><source src="/ECE4960/assets/videos/lab5/roomba.mp4"></video></center>
 
 ## B. Virtual Robot
 
