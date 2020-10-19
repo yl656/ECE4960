@@ -49,14 +49,14 @@ I plan to explore the quickest way to stop the robot completely. One way to stop
 
 Everything else is simple. All we have to do is have the robot driving in full velocity, and when our time-of-flight distance sensor detects a distance that is slightly above our braking distance, we come to a full stop and spin to a different direction. Since route-planning is not in the scope of this lab, we can choose a random direction with no obstacle and repeat the process.
 
-I first tried to have the robot simply stop when an obstacle is detected. The battery was dying so the robot was driving super fast.
+I first tried to have the robot simply stop when an obstacle is detected. The battery was dying so the robot was driving relatively slow.
 
-<video autoplay loop muted inline width="500" align="left"><source src="/ECE4960/assets/videos/lab5/stop1.mp4"></video>
-<video autoplay loop muted inline width="500" align="right"><source src="/ECE4960/assets/videos/lab5/stop2.mp4"></video>
+<video autoplay loop muted inline width="300" align="left"><source src="/ECE4960/assets/videos/lab5/stop1.mp4"></video>
+<video autoplay loop muted inline width="300" align="right"><source src="/ECE4960/assets/videos/lab5/stop2.mp4"></video>
 
 Then, I modified the code so that the robot turns away instead of stopping. The final result is a robot that drives around aimlessly.
 
-<video autoplay loop muted inline width="700"><source src="/ECE4960/assets/videos/lab5/roomba.mp4"></video>
+<center><video autoplay loop muted inline width="700"><source src="/ECE4960/assets/videos/lab5/roomba.mp4"></video></center>
 
 ## B. Virtual Robot
 
