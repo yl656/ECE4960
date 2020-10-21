@@ -17,7 +17,7 @@ gif: robot.gif
 
 [Lab 5, Obstacle Avoidance](Labs/Lab5.md)
 
-[Lab 6, IMU](Labs/Lab6.md)
+[Lab 6, IMU and PID](Labs/Lab6.md)
 
 [Lab 7, Odometry](Labs/Lab7.md)
 
