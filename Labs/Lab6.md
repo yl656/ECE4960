@@ -7,11 +7,27 @@ gif: lab6.gif
 
 # Objective
 
-
+The next step in feedback control is to determine where our robot is, and what direction is facing. We can achieve this by setting up the IMU which contains an accelerometer, a gyroscope, and a magnetometer. Using data from these sensors, we can determine the approximate odometry of the robot.
 
 # Tasks
 
 ## A. Physical Robot
+
+### IMU
+
+As per the instructions, I installed the library for the IMU and scanned the I2C address of the IMU, and it's 0x69 as expected. When running the example script, I tried to apply acceleration on all three axes of the accelerometer as well as all three axes of the gyroscope.
+
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/sim.mp4"></video></center>
+
+As we can see, I was oscillating the IMU first on the accelerometer's X, Y, Z axes and then on the gyroscope's Z, X, Y axes, in that order with each axis specified by a color on top. The accelerometer outputs don't have a maximum range that my arms produced but the outputs from the gyroscope are capped at around 250.
+
+#### Accelerometer
+
+#### Gyroscope
+
+#### Magnetometer
+
+### PID
 
 ## B. Virtual Robot
 
