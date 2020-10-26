@@ -108,6 +108,10 @@ If I set the motor values to something low, however, only one set of wheels woul
 
 <center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/fail.mp4"></video></center>
 
+#### Closed Loop
+
+todo...
+
 ## B. Virtual Robot
 
 For this part of the lab, we are trying to see how accurate the odometry actually is. We first set up the lab like all previous labs, then we launch three tools: the simulator, the plotter, and the keyboard teleoperation tool. Then, we plot the location (noisy, untrusted odom as well as the ground truth) of the virtual robot on the plotter continuously while controlling the virtual robot using the teleoperation tool.
