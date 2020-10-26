@@ -17,11 +17,32 @@ The next step in feedback control is to determine where our robot is, and what d
 
 As per the instructions, I installed the library for the IMU and scanned the I2C address of the IMU, and it's 0x69 as expected. When running the example script, I tried to apply acceleration on all three axes of the accelerometer as well as all three axes of the gyroscope.
 
-<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/sim.mp4"></video></center>
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/IMU.mp4"></video></center>
 
-As we can see, I was oscillating the IMU first on the accelerometer's X, Y, Z axes and then on the gyroscope's Z, X, Y axes, in that order with each axis specified by a color on top. The accelerometer outputs don't have a maximum range that my arms produced but the outputs from the gyroscope are capped at around 250.
+As we can see, I was oscillating the IMU first on the accelerometer's X, Y, Z axes and then on the gyroscope's Z, X, Y axes, in that order with each axis specified by a color on top. The accelerometer outputs don't have a maximum range that my arm could produce but the outputs from the gyroscope are capped at around 250.
 
 #### Accelerometer
+
+Using the the following equations, we can calculate the pitch and roll of the IMU when the only acceleration applied on the accelerometer is gravity.
+
+\\[  pitch=atan2(\frac{a_x}{a_z})\\]
+\\[  roll=atan2(\frac{a_y}{a_z})\\]
+
+I then tested the code by pressing the accelerometer onto a vertical surface, turning it 90 degrees each time, and plotting the outputs.
+
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/PitchRoll.mp4"></video></center>
+
+The roll and pitch both start at 0 degrees. Then, the pitch goes to \\( -\frac{\pi}{2}rad \\), the roll goes to \\( -\frac{\pi}{2}rad \\), the pitch goes to \\( \frac{\pi}{2}rad \\), and the roll goes to \\( \frac{\pi}{2}rad \\). We can also see that when one output is stable, the other is extremely noisy and inaccurate. This is due to the fact that \\( a_z \\) approaches 0 when we tilt the IMU 90 degrees. Otherwise, it honestly seems very accurate.
+
+I also recorded the time-domain signals of three different scenarios. 1. An oscillation. 2. Sitting perfectly still. 3. Short taps/pulses. I then use Python to plot the frequency-fomain signals, wondering if there is a high-frequency peak that I need to get rid of. Here are the results.
+
+<img align = "left" src="/ECE4960/assets/images/lab6/time1.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq1.png" width=500>
+
+<img align = "left" src="/ECE4960/assets/images/lab6/time2.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq2.png" width=500>
+
+<img align = "left" src="/ECE4960/assets/images/lab6/time3.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq3.png" width=500>
+
+<img align = "left" src="/ECE4960/assets/images/lab6/time4.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq4.png" width=500>
 
 #### Gyroscope
 
