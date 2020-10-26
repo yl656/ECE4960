@@ -133,3 +133,7 @@ As we can see, the odometry data and the ground truth are somewhat close to each
 
 I also tested the robot in several other conditions. For example, when it is staying completely still.
 
+<center><video autoplay loop muted inline width="800"><source src="/ECE4960/assets/videos/lab6/simstill.mp4"></video></center>
+
+This video is sped up 80 times. Therefore, in 800 seconds, our robot has effectively traveled around the origin while staying completely still.
+
