@@ -141,5 +141,4 @@ Or, when the robot is traveling at max speed.
 
 <center><video autoplay loop muted inline width="800"><source src="/ECE4960/assets/videos/lab6/fast.mp4"></video></center>
 
-
-
+It doesn't seem like speed has a significnat impact on the noise.
