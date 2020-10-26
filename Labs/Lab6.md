@@ -96,6 +96,18 @@ First, I created a ramp function for the motors so that the robot spins in one d
 
 <center><img src="/ECE4960/assets/images/lab6/rampyaw.png" width="500"></center> 
 
+As we can see from the plot, the robot doesn't start turning at all until the motor value is set to about 120, and the slope only gets stable until the speed hits about 180.
+
+#### Open Loop
+
+Therefore, when trying to make the robot turn as slow as possible, I set the motor speed to about 180. I also check the yaw so that it would stop after one full rotation.
+
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/succ.mp4"></video></center>
+
+If I set the motor values to something low, however, only one set of wheels would really work due to the differences in the motors.
+
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/fail.mp4"></video></center>
+
 ## B. Virtual Robot
 
 For this part of the lab, we are trying to see how accurate the odometry actually is. We first set up the lab like all previous labs, then we launch three tools: the simulator, the plotter, and the keyboard teleoperation tool. Then, we plot the location (noisy, untrusted odom as well as the ground truth) of the virtual robot on the plotter continuously while controlling the virtual robot using the teleoperation tool.
