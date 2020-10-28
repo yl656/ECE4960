@@ -4,3 +4,5 @@ description: <a href="https://cei-lab.github.io/ECE4960/Lab7.html" style="color:
 layout: home
 gif: lab7.gif
 ---
+
+todo... will definitely finish by wednesday

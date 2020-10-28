@@ -110,7 +110,7 @@ If I set the motor values to something low, however, only one set of wheels woul
 
 #### Closed Loop
 
-todo...
+todo... will definitely finish by wednesday
 
 ## B. Virtual Robot
 
