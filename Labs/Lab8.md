@@ -4,3 +4,5 @@ description: <a href="https://cei-lab.github.io/ECE4960/Lab8.html" style="color:
 layout: default
 gif: lab8.gif
 ---
+
+I'll finish on 11/4 😢
