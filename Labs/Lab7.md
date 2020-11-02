@@ -162,7 +162,7 @@ Since \\( \psi \\) in \\( T_R^i \\) is the only non-zero angle in the entire equ
 <center><img src="/ECE4960/assets/images/lab7/tm2.png" width="800"></center> 
 
 <!-- P_i = T_R^i T_{TOF}^R P^{TOF} = \begin{bmatrix}
-cos\psi & sin\psi & 0 & X\\
+cos\psi & -sin\psi & 0 & X\\
 sin\psi & cos\psi & 0 & Y\\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
@@ -177,4 +177,10 @@ sin\psi & cos\psi & 0 & Y\\
 d_m \\ 0 \\ 0 \\ 1
 \end{bmatrix} -->
 
-To perform a sanity check, I calculated a few values by hand when the robot is at different angles, and the values check out.
+To perform a sanity check, I calculated a few values by hand when the robot is at different angles, and the values check out. Then, using this matrix, I plotted the data from one rotation in Cartesian coordinates.
+
+<center><img src="/ECE4960/assets/images/lab7/mappingt.png" width="500"></center> 
+
+As expected, they have the same shape. This is then plotted to the plotter.
+
+<center><img src="/ECE4960/assets/images/lab7/plotter.png" width="500"></center> 
