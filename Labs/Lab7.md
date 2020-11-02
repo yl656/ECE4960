@@ -123,3 +123,15 @@ def update_step():
 
 ## B. Mapping
 
+By spinning the robot and recording the distance readings from the time of flight sensor, I got the mapping below. It is plotted in polar coordinates.
+
+<center><img src="/ECE4960/assets/images/lab7/mapping.png" width="500"></center> 
+
+This is actually not too bad. For reference, here's the actual room that I measured, with an added box.
+
+<center><img src="/ECE4960/assets/images/lab7/gt1.png" width="500"></center> 
+
+<center><img src="/ECE4960/assets/images/lab7/gt2.png" width="500"></center> 
+
+We can see that 
+
