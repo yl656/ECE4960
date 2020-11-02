@@ -110,7 +110,17 @@ If I set the motor values to something low, however, only one set of wheels woul
 
 #### Closed Loop
 
-todo... will definitely finish by wednesday
+Using Arduino's PID library, I was able to tune my P and I parameters so that my robot turns relatively slowly and steadily with only one set of wheels.
+
+<center><video controls width="800"><source src="/ECE4960/assets/videos/lab6/pid.mp4"></video></center>
+
+From the video, I measured approximately 6 seconds per rotation.
+
+The motor values and the gyroscope data are plotted below.
+
+<center><img src="/ECE4960/assets/images/lab6/pid.png" width="500"></center> 
+
+The angular velocity matches my measurement as it is about 60 degress per second.
 
 ## B. Virtual Robot
 
