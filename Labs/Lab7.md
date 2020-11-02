@@ -139,13 +139,42 @@ One thing that I did notice is that the robot became a little more jittery, prob
 
 Using the same data, we could calculate the transformation matrices and convert the distance as well as the yaw to an actual point in the room's coordinate system.
 
-\\[ A_{m,n} = \begin{pmatrix}
-a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
-a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
-\vdots  & \vdots  & \ddots & \vdots  \\
-a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
-\end{pmatrix} \\]
+<center><img src="/ECE4960/assets/images/lab7/tm.png" width="800"></center> 
 
-\\( \begin{bmatrix}a & b \\\\
-c & d\end{bmatrix} \\)
+<!-- P_i = T_R^i T_{TOF}^R P^{TOF} = \begin{bmatrix}
+cos\theta cos\psi & cos\theta sin\psi & sin\theta & dx\\
+cos\phi sin\psi + sin\phi sin\theta cos\psi & cos\phi cos\psi - sin\phi sin\theta sin\psi & -sin\phi cos\theta & dy\\
+sin\phi sin\psi - cos\phi sin\theta cos\psi & sin\phi cos\psi - cos\phi sin\theta sin\psi & cos\phi cos\theta & dz \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+cos\theta cos\psi & cos\theta sin\psi & sin\theta & dx\\
+cos\phi sin\psi + sin\phi sin\theta cos\psi & cos\phi cos\psi - sin\phi sin\theta sin\psi & -sin\phi cos\theta & dy\\
+sin\phi sin\psi - cos\phi sin\theta cos\psi & sin\phi cos\psi - cos\phi sin\theta sin\psi & cos\phi cos\theta & dz \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+d_m \\ 0 \\ 0 \\ 1
+\end{bmatrix} -->
 
+Since \\( \psi \\) in \\( T_R^i \\) is the only non-zero angle in the entire equation, it becomes the equation below if we ignore the z component. 
+
+<center><img src="/ECE4960/assets/images/lab7/tm2.png" width="800"></center> 
+
+<!-- P_i = T_R^i T_{TOF}^R P^{TOF} = \begin{bmatrix}
+cos\psi & sin\psi & 0 & X\\
+sin\psi & cos\psi & 0 & Y\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0.06\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+d_m \\ 0 \\ 0 \\ 1
+\end{bmatrix} -->
+
+To perform a sanity check, I calculated a few values by hand when the robot is at different angles, and the values check out.
