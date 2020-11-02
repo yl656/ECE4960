@@ -123,7 +123,7 @@ def update_step():
 
 ## B. Mapping
 
-By spinning the robot and recording the distance readings from the time of flight sensor, I got the mapping below. It is plotted in polar coordinates.
+By spinning the robot and recording the distance readings from the time-of-flight sensor, I got the mapping below plotted in polar coordinates. To check the reliability of the yaw calculation as well as the data from the TOF sensor, this plot consists of data from three consecutive rotations.
 
 <center><img src="/ECE4960/assets/images/lab7/mapping.png" width="500"></center> 
 
@@ -133,5 +133,15 @@ This is actually not too bad. For reference, here's the actual room that I measu
 
 <center><img src="/ECE4960/assets/images/lab7/gt2.png" width="500"></center> 
 
-We can see that 
+We can see that the box is detected on the right hand side of the plot, even though it is very noisy. The corners are detected surprisingly well, and the left hand side of the plot matches what the robot could see at that position.
 
+One thing that I did notice is that the robot became a little more jittery, probably because it was waiting for the sensor data. This can be easily fixed by simply skipping that iteration if the TOF data is not ready.
+
+Using the same data, we could calculate the transformation matrices and convert the distance as well as the yaw to an actual point in the room's coordinate system.
+
+\\[ A_{m,n} = \begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
+\end{pmatrix} \\]
