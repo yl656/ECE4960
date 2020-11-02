@@ -146,5 +146,6 @@ a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
 a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
 \end{pmatrix} \\]
 
-$\begin{bmatrix}a & b\\c & d\end{bmatrix}$
+\\( \begin{bmatrix}a & b \\
+c & d\end{bmatrix} \\)
 
