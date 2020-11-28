@@ -34,3 +34,5 @@ Similarly, the only points that the Bayes filter got right was the first two and
 In the image above, the bounding box is set to a 3x3 box (not shown on the plotter). The result is very similar to the ones before. I also tested different sizes and it doesn't help. The ones that are more accurate than others are near the origin and in the hallway away from the entrance (marked in the map below). The problem is that the hallway is covered by carpet, which means that the robot cannot really spin to gather distances at different angles. Therefore, I am not optimistic about real-world localization.
 
 <center><img src="/ECE4960/assets/images/lab9/anno.png" width="500"></center>
+
+# Actual Robot
