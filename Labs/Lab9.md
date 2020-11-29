@@ -27,11 +27,11 @@ The result is quite disappointing. The only two points that got close are the or
 
 <center><img src="/ECE4960/assets/images/lab9/simpredupdate.png" width="500"></center> 
 
-Similarly, the only points that the Bayes filter got right was the first two and the last two points. The map geometry is ultimately to blame here. It is too simple and the bounding box for the simulator definitely did not help. However, if I enlarge the bounding box to create an asymmetry, maybe the result will improve. This turns out to be a fool's errand.
+Similarly, the only points that the Bayes filter got right were the first and the last two points. The map geometry is ultimately to blame here. It is too simple due to how tiny my apartment is and the bounding box for the simulator definitely did not help as the boundary is easily mistaken for the actual walls in real life. However, if I enlarge the bounding box to create an asymmetry, maybe the result will improve. This turns out to be a fool's errand.
 
 <center><img src="/ECE4960/assets/images/lab9/biggerbox.png" width="500"></center>
 
-In the image above, the bounding box is set to a 3x3 box (not shown on the plotter). The result is very similar to the ones before. I also tested different sizes and it doesn't help. The ones that are more accurate than others are near the origin and in the hallway away from the entrance (marked in the map below). The problem is that the hallway is covered by carpet, which means that the robot cannot really spin to gather distances at different angles. Therefore, I am not optimistic about real-world localization.
+In the image above, the bounding box is set to 3x3 (not shown on the plotter). The result running both prediction and update is very similar to the ones before. I also tested different sizes and none helps. The points that are more accurate than others are near the origin and in the hallway away from the entrance (marked in the map below). The problem is that the hallway is entirely covered by carpet, which means that the robot cannot really spin to gather distances at different angles. Therefore, I am not optimistic about real-world localization.
 
 <center><img src="/ECE4960/assets/images/lab9/anno.png" width="500"></center>
 
