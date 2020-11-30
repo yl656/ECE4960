@@ -4,3 +4,5 @@ description: <a href="https://cei-lab.github.io/ECE4960/Lab10.html" style="color
 layout: home
 gif: lab10.gif
 ---
+
+Only need 24 hours!
