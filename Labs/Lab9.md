@@ -39,10 +39,12 @@ In the image above, the bounding box is set to 3x3 (not shown on the plotter). T
 
 For the real robot, the procedure is very similar. By creating an additional command called ```scan```, the robot can send 72 bytes of data (array of 18 4-byte ints) back to the VM after performing a scan. With the distance data, the provided ```init_bayes_filter``` can be used to find the most probably location of the robot. I tested it by placing the robot at several measured locations, and below are the results. On the left are the ground truth location and the Bayes filter location. On the right are the data points plotted on polar coordinates.
 
-<center><img src="/ECE4960/assets/images/lab9/0p.png" height="500"><img src="/ECE4960/assets/images/lab9/0r.png" height="500"></center>
+<center><img src="/ECE4960/assets/images/lab9/0p.png" height="300"><img src="/ECE4960/assets/images/lab9/0r.png" height="300"></center>
 
-<center><img src="/ECE4960/assets/images/lab9/1p.png" height="500"><img src="/ECE4960/assets/images/lab9/1r.png" height="500"></center>
+<center><img src="/ECE4960/assets/images/lab9/1p.png" height="300"><img src="/ECE4960/assets/images/lab9/1r.png" height="300"></center>
 
-<center><img src="/ECE4960/assets/images/lab9/2p.png" height="500"><img src="/ECE4960/assets/images/lab9/2r.png" height="500"></center>
+<center><img src="/ECE4960/assets/images/lab9/2p.png" height="300"><img src="/ECE4960/assets/images/lab9/2r.png" height="300"></center>
 
-<center><img src="/ECE4960/assets/images/lab9/3p.png" height="500"><img src="/ECE4960/assets/images/lab9/3r.png" height="500"></center> 
+<center><img src="/ECE4960/assets/images/lab9/3p.png" height="300"><img src="/ECE4960/assets/images/lab9/3r.png" height="300"></center> 
+
+This pretty much matches the expection from earlier. When the robot is at the origin, the prediction is relatively accurate. However, when we move it away, the predictions go all over the place. A major cause of this is the simple geometry of the map but I have very limited floor space to work with. Another source of error is the inaccuracies in the angle measurments. Since there are several cliffs on this map, a tiny error in degrees near these cliffs can create a huge difference when calculating the probability. I also made a mistake that I only realized afterwards in my implementation. Since I used radian instead of degree in my yaw calculation, I calculated the step incorrectly. Instead of scanning every 20 degrees, it was closer to 21.18 degrees. I fixed it for the last location but it didn't really help much since the angle was off regardless.
