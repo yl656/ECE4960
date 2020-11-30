@@ -36,3 +36,13 @@ In the image above, the bounding box is set to 3x3 (not shown on the plotter). T
 <center><img src="/ECE4960/assets/images/lab9/anno.png" width="500"></center>
 
 # Actual Robot
+
+For the real robot, the procedure is very similar. By creating an additional command called ```scan```, the robot can send 72 bytes of data (array of 18 4-byte ints) back to the VM after performing a scan. With the distance data, the provided ```init_bayes_filter``` can be used to find the most probably location of the robot. I tested it by placing the robot at several measured locations, and below are the results. On the left are the ground truth location and the Bayes filter location. On the right are the data points plotted on polar coordinates.
+
+<center><img src="/ECE4960/assets/images/lab9/0p.png" height="500"><img src="/ECE4960/assets/images/lab9/0r.png" height="500"></center>
+
+<center><img src="/ECE4960/assets/images/lab9/1p.png" height="500"><img src="/ECE4960/assets/images/lab9/1r.png" height="500"></center>
+
+<center><img src="/ECE4960/assets/images/lab9/2p.png" height="500"><img src="/ECE4960/assets/images/lab9/2r.png" height="500"></center>
+
+<center><img src="/ECE4960/assets/images/lab9/3p.png" height="500"><img src="/ECE4960/assets/images/lab9/3r.png" height="500"></center> 
