@@ -11,10 +11,25 @@ The objective of this lab is to perform navigation from a random start point to 
 
 # Simulation
 
+Since I am using the simulator only, I created a much more insteresting map loosely based on my apartment.
+
+<center><img src="/ECE4960/assets/images/lab10/map.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center>
+
+With two new trajectories, I tested out how good Bayes localization is.
+
+<center><img src="/ECE4960/assets/images/lab10/loc1.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center>
+
+<center><img src="/ECE4960/assets/images/lab10/loc2.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center> 
+
+As we can see, the localization works relatively well, but there are still some outliers. 
+
 ## Occupancy Matrix
+
+A way to represent 
 
 ## Bug 2
 
 ## BFS
 
 ## Dijkstra
+
