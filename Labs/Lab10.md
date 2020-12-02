@@ -7,7 +7,7 @@ gif: lab10.gif
 
 # Objective
 
-The objective of this lab is to perform navigation from a random start point to a random end point by combining Bug algorithms for path planning and and Bayes/odomtery for localization. As described in my lab 9 report, the restrictions in my apartment hinders the accuracy of my localization, therefore I decided to do this lab completely in the virtual simulator and create a much more interesting geometry that hopefully increases the accuracy of my Bayes filter.
+The objective of this lab is to perform navigation from a random start point to a random end point by combining Bug algorithms (or other local/global algorithms) for path planning and and Bayes/odomtery for localization. As described in my lab 9 report, the restrictions in my apartment hinders the accuracy of my localization, therefore I decided to do this lab completely in the virtual simulator and create a much more interesting geometry that hopefully increases the accuracy of my Bayes filter.
 
 # Simulation
 
