@@ -25,7 +25,9 @@ As we can see, the localization works relatively well, but there are still some 
 
 ## Occupancy Matrix
 
-A way to represent 
+A way to represent my map is to convert it to an occupancy matrix with 1 representing the obstacles. To represent the robot as a point, proper clearance from the obstacles is also required. Therefore, I created an occupancy matrix with each grid representing a 0.1mx0.1m square with padding/clerance set to 0.3m. When converting line segments into occupany matrices, I simply find the distances between the line segment and the blocks nearby and set the ones below the threshold to 1. Below is the occupancy matrix generated with a random start point and a random goal.
+
+<center><img src="/ECE4960/assets/images/lab10/occu.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center> 
 
 ## Bug 2
 
