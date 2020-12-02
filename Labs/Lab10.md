@@ -13,21 +13,21 @@ The objective of this lab is to perform navigation from a random start point to 
 
 Since I am using the simulator only, I created a much more insteresting map loosely based on my apartment.
 
-<center><img src="/ECE4960/assets/images/lab10/map.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center>
+<center><img src="/ECE4960/assets/images/lab10/map.png" width="500"></center>
 
 With two new trajectories, I tested out how good Bayes localization is.
 
-<center><img src="/ECE4960/assets/images/lab10/loc1.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center>
+<center><img src="/ECE4960/assets/images/lab10/loc1.png" width="500"></center>
 
-<center><img src="/ECE4960/assets/images/lab10/loc2.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center> 
+<center><img src="/ECE4960/assets/images/lab10/loc2.png" width="500"></center> 
 
 As we can see, the localization works relatively well, but there are still some outliers. 
 
 ## Occupancy Matrix
 
-A way to represent my map is to convert it to an occupancy matrix with 1 representing the obstacles. To represent the robot as a point, proper clearance from the obstacles is also required. Therefore, I created an occupancy matrix with each grid representing a 0.1mx0.1m square with padding/clerance set to 0.3m. When converting line segments into occupany matrices, I simply find the distances between the line segment and the blocks nearby and set the ones below the threshold to 1. Below is the occupancy matrix generated with a random start point and a random goal.
+A way to represent my map is to convert it to an occupancy matrix with 1 representing the obstacles. To represent the robot as a point, proper clearance from the obstacles is also required. Therefore, I created an occupancy matrix with each grid representing a 0.1mx0.1m square with padding/clerance set to 0.3m. When converting line segments into occupany matrices, I simply find the distances between the line segment and the blocks nearby and set the ones below the threshold to 1. Below is the occupancy matrix generated with two random start points and two random goals. We will focus on these two because they present some interesting challenges.
 
-<center><img src="/ECE4960/assets/images/lab10/occu.png" width="500"><img src="/ECE4960/assets/images/lab8/bayes.png" width="500"></center> 
+<center><img src="/ECE4960/assets/images/lab10/occu1.png" width="500"><img src="/ECE4960/assets/images/lab8/occu2.png" width="500"></center> 
 
 ## Bug 2
 
