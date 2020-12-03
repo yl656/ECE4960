@@ -27,7 +27,7 @@ As we can see, the localization works relatively well, but there are still some 
 
 A way to represent my map is to convert it to an occupancy matrix with 1 representing the obstacles. To represent the robot as a point, proper clearance from the obstacles is also required. Therefore, I created an occupancy matrix with each grid representing a 0.1mx0.1m square with padding/clerance set to 0.3m. When converting line segments into occupany matrices, I simply find the distances between the line segment and the blocks nearby and set the ones below the threshold to 1. Below is the occupancy matrix generated with two random start points and two random goals. We will focus on these two because they present some interesting challenges.
 
-<center><img src="/ECE4960/assets/images/lab10/occu1.png" width="500"><img src="/ECE4960/assets/images/lab8/occu2.png" width="500"></center> 
+<center><img src="/ECE4960/assets/images/lab10/occu1.png" width="500"><img src="/ECE4960/assets/images/lab10/occu2.png" width="500"></center> 
 
 I explored two different algorithms in terms of time complexity and space complexity.
 
@@ -65,7 +65,7 @@ def bfs(grid, start_cell, end_cell):
     return backtrace[::-1]
 ```
 
-<center><img src="/ECE4960/assets/images/lab10/bfs1.png" height="300"><img src="/ECE4960/assets/images/lab8/bfs2.png" height="300"><img src="/ECE4960/assets/images/lab8/bfs3.png" height="300"></center> 
+<center><img src="/ECE4960/assets/images/lab10/bfs1.png" height="300"><img src="/ECE4960/assets/images/lab10/bfs2.png" height="300"><img src="/ECE4960/assets/images/lab10/bfs3.png" height="300"></center> 
 
 As we can see, BFS indeed finds the optimal Manhattan distance path.
 
