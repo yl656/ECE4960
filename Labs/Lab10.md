@@ -69,5 +69,10 @@ def bfs(grid, start_cell, end_cell):
 
 As we can see, BFS indeed finds the optimal Manhattan distance path.
 
+| Max Frontier 	| 13 	| 24 	| 20 	|
+|:-:	|:-:	|:-:	|:-:	|
+| Iterations Big Loop 	| 288 	| 608 	| 679 	|
+| Iterations Small Loop 	| 298 	| 611 	| 680 	|
+
 ## Dijkstra
 
