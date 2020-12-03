@@ -27,7 +27,7 @@ As we can see, the localization works relatively well, but there are still some 
 
 A way to represent my map is to convert it to an occupancy matrix with 1 representing the obstacles. To represent the robot as a point, proper clearance from the obstacles is also required. Therefore, I created an occupancy matrix with each grid representing a 0.1mx0.1m square with padding/clerance set to 0.3m. When converting line segments into occupany matrices, I simply find the distances between the line segment and the blocks nearby and set the ones below the threshold to 1. Below is the occupancy matrix generated with two random start points and two random goals. We will focus on these two because they present some interesting challenges.
 
-<center><img src="/ECE4960/assets/images/lab10/occu1.png" width="500"><img src="/ECE4960/assets/images/lab8/occu2.png" width="500"></center> 
+<center><img src="/ECE4960/assets/images/lab10/occu1.png" width="500"><img src="/ECE4960/assets/images/lab10/occu2.png" width="500"></center> 
 
 I explored two different algorithms in terms of time complexity and space complexity.
 
@@ -67,7 +67,7 @@ def bfs(grid, start_cell, end_cell):
     return backtrace[::-1]
 ```
 
-<center><img src="/ECE4960/assets/images/lab10/bfs1.png" height="300"><img src="/ECE4960/assets/images/lab8/bfs2.png" height="300"><img src="/ECE4960/assets/images/lab8/bfs3.png" height="300"></center> 
+<center><img src="/ECE4960/assets/images/lab10/bfs1.png" height="300"><img src="/ECE4960/assets/images/lab10/bfs2.png" height="300"><img src="/ECE4960/assets/images/lab10/bfs3.png" height="300"></center> 
 
 As we can see, BFS indeed finds the optimal Manhattan distance path. I also printed out some key stats, including the maximum frontier size, the amount of iterations, and the execution time averaged over five searches. The execution time is surprisingly good, likely because the frontier hits the obstacles and limits its size. Therefore, the algorithm does not have to search through a lot of nodes. The algorithm also does not have to do redundant work because a history of visited nodes is kept. This also reduces the memory required as the maximum length of all these different frontiers is only 24 (with the increased resolution).
 
@@ -82,3 +82,6 @@ As we can see, BFS indeed finds the optimal Manhattan distance path. I also prin
 
 ## Dijkstra
 
+## Open-loop Control
+
+Since setting velocities on the simulator is very precise, the easiest way to navigate would be open-loop control with a known start position. Indeed, the algorithms already provide detailed steps to be followed and all the robot has to do is to travel at a certain angle for a certain amount of time.
