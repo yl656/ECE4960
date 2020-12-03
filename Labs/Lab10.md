@@ -7,7 +7,7 @@ gif: lab10.gif
 
 # Objective
 
-The objective of this lab is to perform navigation from a random start point to a random end point by combining Bug algorithms (and other local/global algorithms) for path planning and and Bayes/odomtery for localization. As described in my lab 9 report, the restrictions in my apartment hinders the accuracy of my localization, therefore I decided to do this lab completely in the virtual simulator and create a much more interesting geometry that hopefully increases the accuracy of my Bayes filter.
+The objective of this lab is to perform navigation from a random start point to a random end point by combining algorithms for path planning and and Bayes/odomtery for localization. As described in my lab 9 report, the restrictions in my apartment hinders the accuracy of my localization, therefore I decided to do this lab completely in the virtual simulator and create a much more interesting geometry that hopefully increases the accuracy of my Bayes filter.
 
 # Simulation
 
@@ -29,9 +29,45 @@ A way to represent my map is to convert it to an occupancy matrix with 1 represe
 
 <center><img src="/ECE4960/assets/images/lab10/occu1.png" width="500"><img src="/ECE4960/assets/images/lab8/occu2.png" width="500"></center> 
 
-## Bug 2
+I explored two different algorithms in terms of time complexity and space complexity.
 
 ## BFS
+
+BFS assumes that all costs are equal. Therefore, the only logical moves are moving to the blocks directly adjacent to the current block.
+
+```
+def bfs(grid, start_cell, end_cell):
+    frontier = [(start_cell, None)]
+    parents = {}
+    max_size = 0
+    it = 0
+    while(frontier):
+        max_size = max(len(frontier),max_size)
+        curr_node = frontier[0][0]
+        parents[(curr_node[0],curr_node[1])] = frontier[0][1]
+        frontier = frontier[1:]
+        if (curr_node[0] == end_cell[0] and curr_node[1] == end_cell[1]):
+            break
+        for i in [(-1,0),(1,0),(0,-1),(0,1)]:
+            new_node = curr_node + i
+            if (new_node[0],new_node[1]) in parents or grid[new_node[0],new_node[1]] == 1:
+                continue
+            it = it + 1
+            frontier.append((new_node, curr_node))
+            parents[(new_node[0],new_node[1])] = curr_node
+    curr_node = end_cell
+    backtrace = []
+    while(curr_node[0] != start_cell[0] or curr_node[1] != start_cell[1]):
+        backtrace.append(curr_node)
+        curr_node = parents[(curr_node[0],curr_node[1])]
+    print("max length of frontier is {}".format(max_size))
+    print("total iteration {}".format(it))
+    return backtrace[::-1]
+```
+
+<center><img src="/ECE4960/assets/images/lab10/bfs1.png" height="300"><img src="/ECE4960/assets/images/lab8/bfs2.png" height="300"><img src="/ECE4960/assets/images/lab8/bfs3.png" height="300"></center> 
+
+As we can see, BFS indeed finds the optimal Manhattan distance path.
 
 ## Dijkstra
 
