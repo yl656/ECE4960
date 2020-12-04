@@ -77,11 +77,76 @@ As we can see, BFS indeed finds the optimal Manhattan distance path. I also prin
 | Iterations Big Loop 	| 289 	| 609 	| 680 	|
 | Iterations Small Loop 	| 299 	| 612 	| 681 	|
 | Avg. Exec Time (s) 	| 0.012 	| 0.024 	| 0.035 	|
-| Path Length (m) 	| 5 	| 4.8 	| 9.1 	|
+| Path Length (m) 	| 5.1 	| 4.9 	| 9.2 	|
 
 ## Dijkstra's Algorithm
 
-The most important distinction between BFS and Dijkstra's algorithm is the addition of cost. We no longer have to assume equal cost, which means the robot can move diagonally or at any arbitrary angle. For simplicity, however, my implementation only includes the eight blocks directly connected to the current block.
+The most important distinction between BFS and Dijkstra's algorithm is the addition of cost. We no longer have to assume equal cost, which means the robot can move diagonally or at any arbitrary angle. One advantage that Dijkstra's algorithm has over A* is that it finds the optimal path with minimal cost. Even though it takes a little longer, it would be worth it as the time it takes for the robot to execute the path would be greater than the time it takes for extra computation. For simplicity, my implementation only explores the eight blocks directly connected to the current block.
+
+```
+def dijkstra(grid, start_cell, end_cell):
+    frontier = [start_cell]
+    parents = {}
+    cost = {(start_cell[0],start_cell[1]): 0}
+    max_size = 0
+    it1 = 0
+    it2 = 0
+    while(frontier):
+        it1 = it1 + 1
+        max_size = max(len(frontier),max_size)
+        min_i = 0
+        min_d = cost[(frontier[0][0],frontier[0][1])]
+        
+        # If I keep the nodes sorted, I could get O(logn) insert and O(1) access
+        # instead of O(n) access and O(1) insert but this is merely a proof of concept
+        for i in range(len(frontier)):
+            node = frontier[i]
+            if cost[node[0],node[1]] < min_d:
+                min_d = cost[node[0],node[1]]
+                min_i = i
+        curr_node = frontier.pop(min_i)
+        if (curr_node[0] == end_cell[0] and curr_node[1] == end_cell[1]):
+            break
+        for i in [-1,0,1]:
+            for j in [-1,0,1]:
+                if (i == 0 and j == 0):
+                    continue
+                new_node = curr_node + (i,j)
+                new_node = (new_node[0],new_node[1])
+                new_c = cost[(curr_node[0],curr_node[1])]+(i**2+j**2)**0.5
+                if new_node in cost:
+                    if cost[new_node] <= new_c:
+                        continue
+                if grid[new_node] == 1:
+                    continue
+                if i != 0 and j != 0:
+                    if grid[(new_node[0]-i,new_node[1])] == 1 or grid[(new_node[0],new_node[1]-j)] == 1:
+                        continue
+                it2 = it2 + 1
+                frontier.append(np.array(new_node))
+                parents[new_node] = curr_node
+                cost[new_node] = new_c
+    curr_node = end_cell
+    backtrace = []
+    while(curr_node[0] != start_cell[0] or curr_node[1] != start_cell[1]):
+        backtrace.append(curr_node)
+        curr_node = parents[(curr_node[0],curr_node[1])]
+    print("max length of frontier is {}".format(max_size))
+    print("it1 is {}".format(it1))
+    print("it2 is {}".format(it2))
+    return backtrace[::-1]
+```
+<center><img src="/ECE4960/assets/images/lab10/dij1.png" height="300"><img src="/ECE4960/assets/images/lab10/dij2.png" height="300"><img src="/ECE4960/assets/images/lab10/dij3.png" height="300"></center> 
+
+As we can see, Dijkstra's algorithm does find the most optimal path with the given 8 options. To minimize execution time, my cost function could use a little improvement as right now it only accounts for the distance between two blocks but doesn't account for the turning time. Regardless, the paths found by Dijkstra's algorithm should be faster than the one found by BFS because of the diagonal route. Key stats are also found below.
+
+| Index 	| 1 	| 2 	| 3 	|
+|:-:	|:-:	|:-:	|:-:	|
+| Max Frontier 	| 20 	| 47 	| 48 	|
+| Iterations Big Loop 	| 635 	| 609 	| 722 	|
+| Iterations Small Loop 	| 309 	| 644 	| 723 	|
+| Avg. Exec Time (s) 	| 0.029 	| 0.054 	| 0.063 	|
+| Path Length (m) 	| 4.572 	| 4.549 	| 8.029 	|
 
 ## Open-loop Control
 
