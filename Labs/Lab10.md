@@ -138,16 +138,28 @@ def dijkstra(grid, start_cell, end_cell):
 ```
 <center><img src="/ECE4960/assets/images/lab10/dij1.png" height="300"><img src="/ECE4960/assets/images/lab10/dij2.png" height="300"><img src="/ECE4960/assets/images/lab10/dij3.png" height="300"></center> 
 
-As we can see, Dijkstra's algorithm does find the most optimal path with the given 8 options. To minimize execution time, my cost function could use a little improvement as right now it only accounts for the distance between two blocks but doesn't account for the turning time. Regardless, the paths found by Dijkstra's algorithm should be faster than the one found by BFS because of the diagonal route. Key stats are also found below.
+As we can see, Dijkstra's algorithm does find the most optimal path with the given 8 options. To minimize execution time, my cost function could use a little improvement as right now it only accounts for the distance between two blocks but doesn't account for the turning time. Regardless, the paths found by Dijkstra's algorithm should be faster than the one found by BFS because of the diagonal route. Key stats are also found below compared to the BFS.
 
 | Index 	| 1 	| 2 	| 3 	|
 |:-:	|:-:	|:-:	|:-:	|
-| Max Frontier 	| 20 	| 47 	| 48 	|
-| Iterations Big Loop 	| 635 	| 609 	| 722 	|
-| Iterations Small Loop 	| 309 	| 644 	| 723 	|
-| Avg. Exec Time (s) 	| 0.029 	| 0.054 	| 0.063 	|
-| Path Length (m) 	| 4.572 	| 4.549 	| 8.029 	|
+| Max Frontier BFS 	| 13 	| 24 	| 20 	|
+| Max Frontier DIJ 	| 20 	| 47 	| 48 	|
+| Extra Space 	| 53.8% 	| 95.8% 	| 140% 	|
+| Avg. Exec Time BFS 	| 0.012 	| 0.024 	| 0.035 	|
+| Avg. Exec Time DIJ 	| 0.029 	| 0.054 	| 0.063 	|
+| Extra Time 	| 142% 	| 125% 	| 80% 	|
+| Path Length BFS 	| 5 	| 4.8 	| 9.1 	|
+| Path Length DIJ 	| 4.572 	| 4.549 	| 8.029 	|
+| Improvement 	| 8.56% 	| 5.23% 	| 11.8% 	|
+
+It is worth noting that additional memory is required for both methods to keep track of other important data, such as parents (both) and cost (Dijkstra). Both only require a small amount of memory, fortunately.
+
+Overall, I would say that Dijkstra's algorithm is worth it because the computation time compared to the execution time is insignificant.
 
 ## Open-loop Control
 
-Since setting velocities on the simulator is very precise, the easiest way to navigate would be open-loop control with a known start position. Indeed, the algorithms already provide detailed steps to be followed and all the robot has to do is to travel at a certain angle for a certain amount of time.
+Since setting velocities on the simulator is precise, the easiest way to navigate would be open-loop control with a known start position. Indeed, the algorithms already provide detailed steps to be followed and all the robot has to do is to travel at a certain angle for a certain amount of time. For example, it could execute the third path created by both Dijkstra's algorithm and BFS.
+
+<center><video autoplay loop muted inline width="400"><source src="/ECE4960/assets/videos/lab10/bfs.mp4"></video><video autoplay loop muted inline width="400"><source src="/ECE4960/assets/videos/lab10/dij.mp4"></video></center>
+
+It seems like the BFS path actually takes a shorter amount of time. This is because the Dijkstra path spends too much time turning, and the virtual robot is better at travelling straight. The fix would be the solution I mentioned above, using travel time instead of distance as the cost so turning time would become part of the equation.
