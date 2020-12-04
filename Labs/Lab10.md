@@ -79,8 +79,9 @@ As we can see, BFS indeed finds the optimal Manhattan distance path. I also prin
 | Avg. Exec Time (s) 	| 0.012 	| 0.024 	| 0.035 	|
 | Path Length (m) 	| 5 	| 4.8 	| 9.1 	|
 
+## Dijkstra's Algorithm
 
-## Dijkstra
+The most important distinction between BFS and Dijkstra's algorithm is the addition of cost. We no longer have to assume equal cost, which means the robot can move diagonally or at any arbitrary angle. For simplicity, however, my implementation only includes the eight blocks directly connected to the current block.
 
 ## Open-loop Control
 
