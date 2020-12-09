@@ -1,6 +1,6 @@
 ---
-title: Inverted Pendulum
-description: <a href="https://cei-lab.github.io/ECE4960/Lab11.html" style="color:#FFCC00;">Lab 11</a>
+title: LQR on the Inverted Pendulum on a Cart
+description: <a href="https://cei-lab.github.io/ECE4960/Lab11b.html" style="color:#FFCC00;">Lab 11b</a>
 layout: default
 gif: lab11.gif
 ---

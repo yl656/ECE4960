@@ -21,13 +21,13 @@ gif: robot.gif
 
 [Lab 7, Odometry](Labs/Lab7.md)
 
-[Lab 8, Mapping](Labs/Lab8.md)
+[Lab 8, Localization (sim)](Labs/Lab8.md)
 
-[Lab 9, Planning](Labs/Lab9.md)
+[Lab 9, Localization (real)](Labs/Lab9.md)
 
-[Lab 10, PID Control](Labs/Lab10.md)
+[Lab 10, Path Planning and Execution](Labs/Lab10.md)
 
-[Lab 11, Inverted Pendulum](Labs/Lab11.md)
+[Lab 11b, LQR Inverted Pendulum](Labs/Lab11.md)
 
 ## About me
 
