@@ -4,3 +4,5 @@ description: <a href="https://cei-lab.github.io/ECE4960/Lab11b.html" style="colo
 layout: default
 gif: lab11.gif
 ---
+
+Dropping this lab (ಥ﹏ಥ) I'll still finish it this weekend for fun tho
