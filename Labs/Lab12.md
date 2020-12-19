@@ -20,10 +20,10 @@ I ran the simulation, practically unchanged, with different reference waves.
 When I run ```control.obsv(P.A,P.C)``` and calculate the rank using ```np.linalg.matrix_rank```, I get a result of 3, which is smaller than 4, the size of our state space, indicating that the system is not observable. Lookaing at matrices A and C as well as the observability matrix, it would seem like \\( x \\), or \\( z \\), would be the state that is not observable. By changing one initial state at a time, we can verify if the system is able to correct itself and therefore deduce which state is not observable.
 
 <center><img src="/ECE4960/assets/images/lab12/initialz.png" width="500"><img src="/ECE4960/assets/images/lab12/initialzd.png" width="500"></center>
-<center>left: \( z \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: \( \dot{z} \)</center>
+<center>left: \( z \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: \( \dot{z} \)</center>
 
 <center><img src="/ECE4960/assets/images/lab12/initialt.png" width="500"><img src="/ECE4960/assets/images/lab12/initialtd.png" width="500"></center> 
-<center>left: \( \theta \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: \( \dot{\theta} \)</center>
+<center>left: \( \theta \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: \( \dot{\theta} \)</center>
 
 As we can see from the above plots, if $z$ is off, there is no way to correct it given our current system and the offset persists. Therefore, it is the state that is not observable. When the other states have an offset, they can either be directly or indirectly adjusted. For example, when $\theta$ has a different initial value, the cart is able to lift the pendulum back to upright position.
 
@@ -105,7 +105,7 @@ Lastly, let's try changing the update time. First, from 1ms to 10ms.
 
 <center><img src="/ECE4960/assets/images/lab12/t001.png" width="600"></center> 
 
-Honestly, I am surprised but glad that it worked. I then tried to find the maximum possible time.
+Honestly, I am surprised but glad that it worked. It is more jittery but if the actual robot performs like this I'll be waking up from my sleep smiling. I then tried to find the maximum possible time.
 
 <center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/t01.mp4"></video></center>
 
@@ -133,5 +133,5 @@ With all the imperfections implemented, I think the robot MIGHT be able to do it
 
 To incorporate the TOF sensor, I changed the C matrix and update ```y_kf``` at ```100HZ```. However, for 9 cycles out of 10, the $z$ measurement is replaced by a history value that is updated every 10 cycles. This would effectively mean we are measuring both $\dot{\theta}$ (at appr. 100Hz) and $z$ (at appr. 10Hz). After a few trials, however, it seems that incorporating the TOF sensor is counterproductive for some reason. It is possible that this happens because no measurements are better than laggy measurements, as the Kalman filter actually gets the outdated measurements for $z$ most of the time.
 
-<center><img src="/ECE4960/assets/images/lab12/at.png" width="600"></center> 
+<center><img src="/ECE4960/assets/images/lab12/zt.png" width="600"></center> 
 
