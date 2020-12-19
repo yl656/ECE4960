@@ -29,6 +29,8 @@ gif: robot.gif
 
 [Lab 11b, LQR Inverted Pendulum](Labs/Lab11.md)
 
+[Lab 12b, LQG Inverted Pendulum](Labs/Lab12.md)
+
 ## About me
 
 <img src="https://cpb-us-w2.wpmucdn.com/sites.coecis.cornell.edu/dist/0/60/files/2016/06/AndrewLin-2idpjtm.jpg" alt="" width="100"/>
