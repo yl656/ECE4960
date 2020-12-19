@@ -20,12 +20,21 @@ I ran the simulation, practically unchanged, with different reference waves.
 When I run ```control.obsv(P.A,P.C)``` and calculate the rank using ```np.linalg.matrix_rank```, I get a result of 3, which is smaller than 4, the size of our state space, indicating that the system is not observable. Lookaing at matrices A and C as well as the observability matrix, it would seem like \\( x \\), or \\( z \\), would be the state that is not observable. By changing one initial state at a time, we can verify if the system is able to correct itself and therefore deduce which state is not observable.
 
 <center><img src="/ECE4960/assets/images/lab12/initialz.png" width="500"><img src="/ECE4960/assets/images/lab12/initialzd.png" width="500"></center>
-<center>left: \( z \) 					right: \( \dot{z} \)</center>
+<center>left: \( z \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: \( \dot{z} \)</center>
 
 <center><img src="/ECE4960/assets/images/lab12/initialt.png" width="500"><img src="/ECE4960/assets/images/lab12/initialtd.png" width="500"></center> 
-<center>left: \( \theta \) 					right: \( \dot{\theta} \)</center>
+<center>left: \( \theta \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: \( \dot{\theta} \)</center>
 
 As we can see from the above plots, if $z$ is off, there is no way to correct it given our current system and the offset persists. Therefore, it is the state that is not observable. When the other states have an offset, they can either be directly or indirectly adjusted. For example, when $\theta$ has a different initial value, the cart is able to lift the pendulum back to upright position.
 
-<center></video><video autoplay loop muted inline width="400"><source src="/ECE4960/assets/videos/lab12/init.mp4"></video></center>
+<center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/init.mp4"></video></center>
+
+Next, to have a more realistic estimate of how well Kalman filter works, I added imperfections step by step.
+
+First, some random noise are added to all four initial states as discrepencies. The Kalman filter seems to be able to adjust very quickly, even though it can't get rid of the offset in $z$. The noise I chose for $z$ and $\dot{z}$ are $\pm0.5$. For $\theta$, $\pm20\circ$ and for $\dot{\theta}$, $\frac{\pi}{2}rad/s$. These are all relatively high errors and the real offsets are unlikely to exceed the range.
+
+<center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/init4.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/init.png" width="600"></center> 
+
 

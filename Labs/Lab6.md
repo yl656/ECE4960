@@ -36,13 +36,13 @@ The roll and pitch both start at 0 degrees. Then, the pitch goes to \\( -\frac{\
 
 I also recorded the time-domain signals of three different scenarios. 1. An oscillation. 2. Sitting perfectly still at two different sampling frequencies. 3. Short taps/pulses. I then use Python to plot the frequency-fomain signals, wondering if there is a high-frequency peak that I need to get rid of. Here are the results.
 
-<img align = "left" src="/ECE4960/assets/images/lab6/time1.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq1.png" width=500>
+<img align = "left" src="/ECE4960/assets/images/lab6/time1.png" height=300> <img align = "right" src="/ECE4960/assets/images/lab6/freq1.png" height=300>
 
-<img align = "left" src="/ECE4960/assets/images/lab6/time2.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq2.png" width=500>
+<img align = "left" src="/ECE4960/assets/images/lab6/time2.png" height=300> <img align = "right" src="/ECE4960/assets/images/lab6/freq2.png" height=300>
 
-<img align = "left" src="/ECE4960/assets/images/lab6/time3.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq3.png" width=500>
+<img align = "left" src="/ECE4960/assets/images/lab6/time3.png" height=300> <img align = "right" src="/ECE4960/assets/images/lab6/freq3.png" height=300>
 
-<img align = "left" src="/ECE4960/assets/images/lab6/time4.png" width=500> <img align = "right" src="/ECE4960/assets/images/lab6/freq4.png" width=500>
+<img align = "left" src="/ECE4960/assets/images/lab6/time4.png" height=300> <img align = "right" src="/ECE4960/assets/images/lab6/freq4.png" height=300>
 
 Honestly, nothing is really unexpected in the FFT spectrum. For the first signal, there is a very strong peak at about 5Hz, which matches what we can observe from the time-domain signal. For the second and third signal, the magnitude across all higher frequencies are relatively similar. For the fourth signal, the output also makes sense because the Fourier Transform of the delta function is a non-zero constant. Judging from the results, I don't believe that there is a specific high-frequency peak that I need to get rid of. Regardless, I implemented a low-pass filter that I will discuss in the filter section.
 
