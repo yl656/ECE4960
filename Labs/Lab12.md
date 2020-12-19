@@ -37,7 +37,7 @@ First, some random noise are added to all four initial states as discrepencies. 
 
 <center><img src="/ECE4960/assets/images/lab12/init.png" width="600"></center> 
 
-For the deadband and saturation, we know from lab 6 that the cart has a maximum velocity of $2.75m/s$. For the minimum velocity, I decided on $0.2m/s$ because it seems resonable. Therefore, if the absolute value of $u$ is above 2.75, it is capped. If it is below 0.2, it is set to 0.
+For the deadband and saturation, we know from lab 6 that the cart has a maximum acceleration of about $3m/s^2$. For the minimum acceleration, I decided on $0.2m/s^2$ because it seems resonable. This is honestly not great because drag is ignored.
 
 <center><video width="600"><source src="/ECE4960/assets/videos/lab12/deadsat.mp4"></video></center>
 
@@ -62,3 +62,39 @@ The cart just goes further and further to the right and never comes back. After 
 <center><img src="/ECE4960/assets/images/lab12/measurement.png" width="600"></center> 
 
 The system is still pretty stable even though the estimates are quite noisy.
+
+To modify matrices A and B, I decided to simply scale the matrices upwards until the systems starts breaking again. First, I only scaled A by 30%. The system went absolutely nuts. The cart literally flew out of the universe, and then some.
+
+<center><img src="/ECE4960/assets/images/lab12/a13.png" width="600"></center> 
+
+10% was no better.
+
+<center><img src="/ECE4960/assets/images/lab12/a11.png" width="600"></center> 
+<center>10%</center>
+
+<center><img src="/ECE4960/assets/images/lab12/a103.png" width="600"></center> 
+<center>3%</center>
+
+<center><img src="/ECE4960/assets/images/lab12/a101.png" width="600"></center> 
+<center>1%</center>
+
+<center><img src="/ECE4960/assets/images/lab12/a1001.png" width="600"></center> 
+<center>0.1%</center>
+
+<center><img src="/ECE4960/assets/images/lab12/a10001.png" width="600"></center> 
+<center>0.01%</center>
+
+<center><img src="/ECE4960/assets/images/lab12/a100001.png" width="600"></center> 
+<center>0.001%</center>
+
+Finally, something that doesn't break physics. I then tried to increase scale B in the same way. I learned my lesson and started trying at 0.1%.
+
+<center><img src="/ECE4960/assets/images/lab12/b1001.png" width="600"></center> 
+<center>0.1%</center>
+
+<center><img src="/ECE4960/assets/images/lab12/b10001.png" width="600"></center> 
+<center>0.01%</center>
+
+B seems to be a lot more forgiving. What if A and B are both changed by the values that work from above?
+
+<center><img src="/ECE4960/assets/images/lab12/ab.png" width="600"></center> 
