@@ -37,4 +37,10 @@ First, some random noise are added to all four initial states as discrepencies. 
 
 <center><img src="/ECE4960/assets/images/lab12/init.png" width="600"></center> 
 
+For the deadband and saturation, we know from lab 6 that the cart has a maximum velocity of $2.75m/s$. For the minimum velocity, I decided on $0.2m/s$ because it seems resonable. Therefore, if the absolute value of $u$ is above 2.75, it is capped. If it is below 0.2, it is set to 0.
 
+<center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/deadsat.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/deadsat.png" width="600"></center> 
+
+The overall balancing of the pendulum seems to be working fine, but the $z$ position unfortunately fails to be updated correctly. This is probably due to the deadband region. The cart tries to do tiny changes to adjust the position but the deadband region does not allow it to happen. Movements are therefore more jerky.
