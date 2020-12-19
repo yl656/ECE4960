@@ -31,7 +31,7 @@ As we can see from the above plots, if $z$ is off, there is no way to correct it
 
 Next, to have a more realistic estimate of how well Kalman filter works, I added imperfections step by step.
 
-First, some random noise are added to all four initial states as discrepencies. The Kalman filter seems to be able to adjust very quickly, even though it can't get rid of the offset in $z$. The noise I chose for $z$ and $\dot{z}$ are $\pm0.5$. For $\theta$, $\pm20\circ$ and for $\dot{\theta}$, $\frac{\pi}{2}rad/s$. These are all relatively high errors and the real offsets are unlikely to exceed the range.
+First, some random noise are added to all four initial states as discrepencies. The Kalman filter seems to be able to adjust very quickly, even though it can't get rid of the offset in $z$. The variance I chose for $z$ and $\dot{z}$ are $0.5$. For $\theta$, $20\circ$ and for $\dot{\theta}$, $\frac{\pi}{2}rad/s$. These are all relatively high errors and the real offsets are unlikely to exceed the range.
 
 <center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/init4.mp4"></video></center>
 
@@ -39,8 +39,26 @@ First, some random noise are added to all four initial states as discrepencies. 
 
 For the deadband and saturation, we know from lab 6 that the cart has a maximum velocity of $2.75m/s$. For the minimum velocity, I decided on $0.2m/s$ because it seems resonable. Therefore, if the absolute value of $u$ is above 2.75, it is capped. If it is below 0.2, it is set to 0.
 
-<center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/deadsat.mp4"></video></center>
+<center><video width="600"><source src="/ECE4960/assets/videos/lab12/deadsat.mp4"></video></center>
 
 <center><img src="/ECE4960/assets/images/lab12/deadsat.png" width="600"></center> 
 
 The overall balancing of the pendulum seems to be working fine, but the $z$ position unfortunately fails to be updated correctly. This is probably due to the deadband region. The cart tries to do tiny changes to adjust the position but the deadband region does not allow it to happen. Movements are therefore more jerky.
+
+To add process noise, only a single line in the dynamic model has to be uncommented.
+
+<center><video width="600"><source src="/ECE4960/assets/videos/lab12/process.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/process.png" width="600"></center> 
+
+The process noise does not seem to make a lot of difference. Measurement noise is then accomplished by adding random values to the state values, or ```old_state```, that are multiplied by matrix C at every iteration. As expected, the measurement noise has a huge impact on the Kalman filter result and I had to lower my original variance by a lot. I also found out that my initial state discrepency might have too big of an impact as all the modifications after it has a significant chance of breaking the system especially with the measurement noise added so I lowered the variance by 75%. Shown below is the result of a broken controller.
+
+<center><img src="/ECE4960/assets/images/lab12/process.png" width="600"></center> 
+
+The cart just goes further and further to the right and never comes back. After adjusting, however, the system is a lot more stable. Still, the measurement noise cannot be too large. The final values I settled on was 0.1, which is about $6\circ/s$.
+
+<center><video width="600"><source src="/ECE4960/assets/videos/lab12/measurement.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/measurement.png" width="600"></center> 
+
+The system is still pretty stable even though the estimates are quite noisy.
