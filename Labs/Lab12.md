@@ -31,7 +31,7 @@ As we can see from the above plots, if $z$ is off, there is no way to correct it
 
 Next, to have a more realistic estimate of how well Kalman filter works, I added imperfections step by step.
 
-First, some random noise are added to all four initial states as discrepencies. The Kalman filter seems to be able to adjust very quickly, even though it can't get rid of the offset in $z$. The variance I chose for $z$ and $\dot{z}$ are $0.5$. For $\theta$, $20\circ$ and for $\dot{\theta}$, $\frac{\pi}{2}rad/s$. These are all relatively high errors and the real offsets are unlikely to exceed the range.
+First, some random noise are added to all four initial states as discrepencies. The Kalman filter seems to be able to adjust very quickly, even though it can't get rid of the offset in $z$. The variance I chose for $z$ and $\dot{z}$ are $0.5$. For $\theta$, $20^\circ$ and for $\dot{\theta}$, $\frac{\pi}{2}rad/s$. These are all relatively high errors and the real offsets are unlikely to exceed the range.
 
 <center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/init4.mp4"></video></center>
 
@@ -39,7 +39,7 @@ First, some random noise are added to all four initial states as discrepencies. 
 
 For the deadband and saturation, we know from lab 6 that the cart has a maximum acceleration of about $3m/s^2$. For the minimum acceleration, I decided on $0.2m/s^2$ because it seems resonable. This is honestly not great because drag is ignored.
 
-<center><video width="600"><source src="/ECE4960/assets/videos/lab12/deadsat.mp4"></video></center>
+<center><video controls width="600"><source src="/ECE4960/assets/videos/lab12/deadsat.mp4"></video></center>
 
 <center><img src="/ECE4960/assets/images/lab12/deadsat.png" width="600"></center> 
 
@@ -47,7 +47,7 @@ The overall balancing of the pendulum seems to be working fine, but the $z$ posi
 
 To add process noise, only a single line in the dynamic model has to be uncommented.
 
-<center><video width="600"><source src="/ECE4960/assets/videos/lab12/process.mp4"></video></center>
+<center><video controls width="600"><source src="/ECE4960/assets/videos/lab12/process.mp4"></video></center>
 
 <center><img src="/ECE4960/assets/images/lab12/process.png" width="600"></center> 
 
@@ -55,9 +55,9 @@ The process noise does not seem to make a lot of difference. Measurement noise i
 
 <center><img src="/ECE4960/assets/images/lab12/process.png" width="600"></center> 
 
-The cart just goes further and further to the right and never comes back. After adjusting, however, the system is a lot more stable. Still, the measurement noise cannot be too large. The final values I settled on was 0.1, which is about $6\circ/s$.
+The cart just goes further and further to the right and never comes back. After adjusting, however, the system is a lot more stable. Still, the measurement noise cannot be too large. The final values I settled on was 0.1, which is about $6^\circ/s$.
 
-<center><video width="600"><source src="/ECE4960/assets/videos/lab12/measurement.mp4"></video></center>
+<center><video controls width="600"><source src="/ECE4960/assets/videos/lab12/measurement.mp4"></video></center>
 
 <center><img src="/ECE4960/assets/images/lab12/measurement.png" width="600"></center> 
 
@@ -87,7 +87,7 @@ To modify matrices A and B, I decided to simply scale the matrices upwards until
 <center><img src="/ECE4960/assets/images/lab12/a100001.png" width="600"></center> 
 <center>0.001%</center>
 
-Finally, something that doesn't break physics. I then tried to increase scale B in the same way. I learned my lesson and started trying at 0.1%.
+Finally, something that doesn't break physics. I then tried to scale B in the same way. I learned my lesson and started trying at 0.1%.
 
 <center><img src="/ECE4960/assets/images/lab12/b1001.png" width="600"></center> 
 <center>0.1%</center>
@@ -98,3 +98,40 @@ Finally, something that doesn't break physics. I then tried to increase scale B 
 B seems to be a lot more forgiving. What if A and B are both changed by the values that work from above?
 
 <center><img src="/ECE4960/assets/images/lab12/ab.png" width="600"></center> 
+
+Lastly, let's try changing the update time. First, from 1ms to 10ms.
+
+<center><video controls width="600"><source src="/ECE4960/assets/videos/lab12/t001.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/t001.png" width="600"></center> 
+
+Honestly, I am surprised but glad that it worked. I then tried to find the maximum possible time.
+
+<center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/t01.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/t01.png" width="600"></center> 
+
+100ms unfortunately doesn't work.
+
+20ms, however, produces different results with different initial conditions.
+
+<center><video autoplay loop muted inline width="600"><source src="/ECE4960/assets/videos/lab12/t002a.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/t002a.png" width="600"></center> 
+
+<center><video controls width="600"><source src="/ECE4960/assets/videos/lab12/t002b.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/t002b.png" width="600"></center> 
+
+<center><video controls width="600"><source src="/ECE4960/assets/videos/lab12/t002c.mp4"></video></center>
+
+<center><img src="/ECE4960/assets/images/lab12/t002c.png" width="600"></center> 
+
+It seems that 10ms is about the limit.
+
+With all the imperfections implemented, I think the robot MIGHT be able to do it. The biggest concern I have is the motors and I don't believe that is remotely close to perfectly modeled through our simulation.
+
+To incorporate the TOF sensor, I changed the C matrix and update ```y_kf``` at ```100HZ```. However, for 9 cycles out of 10, the $z$ measurement is replaced by a history value that is updated every 10 cycles. This would effectively mean we are measuring both $\dot{\theta}$ (at appr. 100Hz) and $z$ (at appr. 10Hz). After a few trials, however, it seems that incorporating the TOF sensor is counterproductive for some reason. It is possible that this happens because no measurements are better than laggy measurements, as the Kalman filter actually gets the outdated measurements for $z$ most of the time.
+
+<center><img src="/ECE4960/assets/images/lab12/at.png" width="600"></center> 
+
